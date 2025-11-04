@@ -16,7 +16,7 @@ function Educacion({ darkMode }) {
         "Mención de Proyecto de Grado.",
         "Puesto sobresaliente en la carrera.",
       ],
-      insignia: "",
+      insignia: "https://wallet.xertify.co/certificates/FB4B8666A002",
     },
   ];
 
@@ -122,6 +122,7 @@ function Educacion({ darkMode }) {
                     </div>
 
                     <a
+                      href={exp.insignia}
                       className={`ml-auto px-4 py-1 rounded-2xl shadow-lg backdrop-blur-md border text-sm ${
                         darkMode
                           ? "bg-cyan-400/10 border-cyan-400/40 text-cyan-300 hover:bg-cyan-400/20"
