@@ -1,13 +1,10 @@
 import { useEffect, useState } from "react";
 import logo from "../assets/logo.png";
 
-function Header() {
+function Header({ darkMode, setDarkMode }) {
   const [active, setActive] = useState("home");
   const [showHeader, setShowHeader] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
-  const [darkMode, setDarkMode] = useState(
-    localStorage.getItem("theme") === "dark"
-  );
 
   const links = [
     { id: "home", label: "Home", href: "#perfil" },
@@ -30,36 +27,27 @@ function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
 
-  // 🌗 Aplicar tema globalmente
-  useEffect(() => {
-    const root = document.documentElement;
-    const body = document.body;
-
-    if (darkMode) {
-      root.classList.add("dark");
-      body.classList.remove("light");
-      localStorage.setItem("theme", "dark");
-    } else {
-      root.classList.remove("dark");
-      body.classList.add("light");
-      localStorage.setItem("theme", "light");
-    }
-  }, [darkMode]);
-
-
   return (
     <nav
-      className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 
-        bg-[#E4E7EF]/90 dark:bg-gray-900/90 
-        backdrop-blur-md shadow-lg border border-gray-300 dark:border-gray-700 
-        rounded-2xl w-[90%] max-w-6xl transition-all duration-500
+      className={`fixed top-4 left-1/2 -translate-x-1/2 z-50
+        backdrop-blur-md border rounded-2xl w-[90%] max-w-6xl transition-all duration-500
+        shadow-lg
+        ${
+          darkMode
+            ? "bg-gray-900/90 border-gray-700 text-gray-100"
+            : "bg-[#DDE1EC]/90 border-gray-300 text-gray-800"
+        }
         ${showHeader ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"}`}
     >
       <div className="flex items-center justify-between px-6 py-3">
         {/* 🧿 Logo + Nombre */}
         <a href="#" className="flex items-center space-x-3">
           <img src={logo} className="h-8 w-8 object-contain" alt="Logo" />
-          <span className="text-lg font-semibold text-gray-900 dark:text-white">
+          <span
+            className={`text-lg font-semibold ${
+              darkMode ? "text-white" : "text-gray-800"
+            }`}
+          >
             Santiago Rey
           </span>
         </a>
@@ -74,8 +62,12 @@ function Header() {
                   onClick={() => setActive(link.id)}
                   className={`block py-2 px-3 rounded-md transition-all duration-200 ${
                     active === link.id
-                      ? "text-blue-700 dark:text-blue-400 font-semibold"
-                      : "text-gray-900 hover:text-blue-700 dark:text-gray-200 dark:hover:text-blue-400"
+                      ? darkMode
+                        ? "text-cyan-300 font-semibold"
+                        : "text-blue-600 font-semibold"
+                      : darkMode
+                        ? "text-gray-200 hover:text-cyan-300"
+                        : "text-gray-700 hover:text-blue-700"
                   }`}
                 >
                   {link.label}
@@ -93,7 +85,7 @@ function Header() {
               className="sr-only peer"
             />
             <div
-              className={`w-14 h-8 rounded-full transition-colors duration-500 ${
+              className={`w-14 h-8 rounded-full transition-colors duration-500 relative ${
                 darkMode ? "bg-gray-700" : "bg-gray-300"
               }`}
             >
