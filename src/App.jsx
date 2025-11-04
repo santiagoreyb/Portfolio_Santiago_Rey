@@ -6,6 +6,8 @@ import Educacion from "./components/Educacion";
 import CursosCertificados from "./components/CursosCertificados";
 import Proyectos from "./components/Proyectos";
 import Habilidades from "./components/Habilidades";
+import Contacto from "./components/Contacto";
+import Footer from "./components/Footer";
 function App() {
   const [darkMode, setDarkMode] = useState(
     localStorage.getItem("theme") === "dark"
@@ -41,6 +43,7 @@ function App() {
         <Habilidades darkMode={darkMode} />
         <Contacto darkMode={darkMode} />
       </main>
+      <Footer darkMode={darkMode}></Footer>
     </div>
   );
 }

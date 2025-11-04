@@ -1,176 +1,166 @@
 import { useState } from "react";
-import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 
 function Contacto({ darkMode }) {
-  const [formData, setFormData] = useState({
-    nombre: "",
+  const [isOpen, setIsOpen] = useState(true);
+  const [form, setForm] = useState({
+    name: "",
     email: "",
-    mensaje: "",
+    message: "",
   });
-  const [enviando, setEnviando] = useState(false);
-  const [estado, setEstado] = useState(null);
+  const [status, setStatus] = useState("");
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    setForm({ ...form, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setEnviando(true);
-    setEstado(null);
+    setStatus("sending");
 
     emailjs
       .send(
-        "service_sw205xk", // ✅ Service ID
-        "template_dzxzifl", // ✅ Template ID
-        formData,
-        "usZ3hrzW63tuE5iHP" // ✅ Public Key
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        form,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       )
-      .then(
-        () => {
-          setEstado("success");
-          setFormData({ nombre: "", email: "", mensaje: "" });
-        },
-        (error) => {
-          console.error("Error al enviar:", error);
-          setEstado("error");
-        }
-      )
-      .finally(() => setEnviando(false));
+      .then(() => {
+        setStatus("success");
+        setForm({ name: "", email: "", message: "" });
+        setTimeout(() => setStatus(""), 4000);
+      })
+      .catch(() => {
+        setStatus("error");
+        setTimeout(() => setStatus(""), 4000);
+      });
   };
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-      className={`w-[90%] max-w-2xl mx-auto mt-20 mb-10 p-8 rounded-2xl shadow-md border backdrop-blur-md ${
-        darkMode
-          ? "bg-[#0f172a]/80 border-cyan-500/30"
-          : "bg-[#cdd3e1] border-gray-300"
+    <div
+      className={`w-[90%] max-w-6xl mx-auto pt-8 transition-all duration-300 ${
+        isOpen ? "min-h-screen" : "h-auto"
       }`}
     >
-      <h2
-        className={`text-3xl md:text-4xl font-bold text-center mb-6 ${
-          darkMode ? "text-white" : "text-gray-800"
+      {/* Encabezado */}
+      <div className="relative mb-6">
+        <h2 className="text-3xl md:text-4xl font-bold tracking-wide text-center">
+          📬 Contáctame
+        </h2>
+
+        {/* Botón + / − */}
+        <button
+          onClick={() => setIsOpen((s) => !s)}
+          aria-expanded={isOpen}
+          className="absolute right-2 top-0 text-3xl md:text-4xl font-bold hover:bg-white/5 transition"
+          title={isOpen ? "Cerrar sección" : "Abrir sección"}
+        >
+          {isOpen ? "−" : "+"}
+        </button>
+      </div>
+
+      {/* Línea decorativa */}
+      <div
+        className={`mx-auto h-[2px] w-full rounded-full ${
+          darkMode ? "bg-cyan-300/50" : "bg-[#93B4D4]"
+        }`}
+      ></div>
+
+      {/* Contenido */}
+      <div
+        className={`overflow-hidden transition-all duration-700 ease-in-out ${
+          isOpen ? "max-h-[5000px] mt-8 opacity-100" : "max-h-0 mt-0 opacity-0"
         }`}
       >
-        📬 Contáctame
-      </h2>
-
-      <form
-        onSubmit={handleSubmit}
-        className="flex flex-col gap-4 text-sm md:text-base"
-      >
-        {/* Nombre */}
-        <div className="flex flex-col">
-          <label
-            htmlFor="nombre"
-            className={`${darkMode ? "text-cyan-200" : "text-gray-700"} mb-1`}
-          >
-            Tu nombre
-          </label>
-          <input
-            type="text"
-            id="nombre"
-            name="nombre"
-            required
-            value={formData.nombre}
-            onChange={handleChange}
-            className={`p-3 rounded-lg border outline-none transition-all duration-300 ${
-              darkMode
-                ? "bg-[#1e293b] border-cyan-500/30 text-white focus:border-cyan-400"
-                : "bg-white border-gray-300 text-gray-800 focus:border-cyan-500"
-            }`}
-            placeholder="Ej: Santiago Rey"
-          />
-        </div>
-
-        {/* Email */}
-        <div className="flex flex-col">
-          <label
-            htmlFor="email"
-            className={`${darkMode ? "text-cyan-200" : "text-gray-700"} mb-1`}
-          >
-            Tu email o forma de contacto
-          </label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            required
-            value={formData.email}
-            onChange={handleChange}
-            className={`p-3 rounded-lg border outline-none transition-all duration-300 ${
-              darkMode
-                ? "bg-[#1e293b] border-cyan-500/30 text-white focus:border-cyan-400"
-                : "bg-white border-gray-300 text-gray-800 focus:border-cyan-500"
-            }`}
-            placeholder="ejemplo@email.com"
-          />
-        </div>
-
-        {/* Mensaje */}
-        <div className="flex flex-col">
-          <label
-            htmlFor="mensaje"
-            className={`${darkMode ? "text-cyan-200" : "text-gray-700"} mb-1`}
-          >
-            Tu mensaje
-          </label>
-          <textarea
-            id="mensaje"
-            name="mensaje"
-            required
-            rows="5"
-            value={formData.mensaje}
-            onChange={handleChange}
-            className={`p-3 rounded-lg border outline-none resize-none transition-all duration-300 ${
-              darkMode
-                ? "bg-[#1e293b] border-cyan-500/30 text-white focus:border-cyan-400"
-                : "bg-white border-gray-300 text-gray-800 focus:border-cyan-500"
-            }`}
-            placeholder="Escribe tu mensaje aquí..."
-          ></textarea>
-        </div>
-
-        {/* Botón */}
-        <button
-          type="submit"
-          disabled={enviando}
-          className={`mt-4 py-3 px-6 rounded-lg font-semibold transition-all duration-300 ${
-            enviando
-              ? "opacity-70 cursor-not-allowed"
-              : darkMode
-              ? "bg-cyan-500 hover:bg-cyan-400 text-black"
-              : "bg-cyan-600 hover:bg-cyan-500 text-white"
+        {/* Contenedor del formulario */}
+        <div
+          className={`max-w-2xl mx-auto rounded-3xl shadow-xl p-5 transition-all ${
+            darkMode
+              ? "bg-[#0b1c2c] text-white shadow-cyan-900/40"
+              : "bg-[#d3daeb] text-gray-900 shadow-gray-400/40"
           }`}
         >
-          {enviando ? "Enviando..." : "Enviar mensaje"}
-        </button>
-      </form>
+          <p
+            className={`text-center text-base md:text-lg mb-4 leading-relaxed ${
+              darkMode ? "text-cyan-100/90" : "text-gray-700"
+            }`}
+          >
+            Si deseas colaborar, tienes alguna pregunta o solo quieres saludar,
+            ¡escríbeme un mensaje!
+          </p>
 
-      {/* Mensajes de estado */}
-      {estado === "success" && (
-        <p
-          className={`mt-4 text-center font-medium ${
-            darkMode ? "text-green-400" : "text-green-600"
-          }`}
-        >
-          ✅ ¡Mensaje enviado con éxito!
-        </p>
-      )}
-      {estado === "error" && (
-        <p
-          className={`mt-4 text-center font-medium ${
-            darkMode ? "text-red-400" : "text-red-600"
-          }`}
-        >
-          ❌ Ocurrió un error al enviar. Intenta de nuevo.
-        </p>
-      )}
-    </motion.div>
+          <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+            <label className="flex flex-col">
+              <span className="font-semibold mb-1">Nombre</span>
+              <input
+                type="text"
+                name="name"
+                value={form.name}
+                onChange={handleChange}
+                required
+                className={`p-3 rounded-xl border focus:outline-none focus:ring-2 ${
+                  darkMode
+                    ? "bg-[#112233] border-gray-600 focus:ring-cyan-400"
+                    : "bg-white border-gray-400 focus:ring-[#93B4D4]"
+                }`}
+              />
+            </label>
+
+            <label className="flex flex-col">
+              <span className="font-semibold mb-1">
+                Tu email o forma en la que quieres ser contactado
+              </span>
+              <input
+                type="email"
+                name="email"
+                value={form.email}
+                onChange={handleChange}
+                required
+                className={`p-3 rounded-xl border focus:outline-none focus:ring-2 ${
+                  darkMode
+                    ? "bg-[#112233] border-gray-600 focus:ring-cyan-400"
+                    : "bg-white border-gray-400 focus:ring-[#93B4D4]"
+                }`}
+              />
+            </label>
+
+            <label className="flex flex-col">
+              <span className="font-semibold mb-1">Mensaje</span>
+              <textarea
+                name="message"
+                rows="5"
+                value={form.message}
+                onChange={handleChange}
+                required
+                className={`p-3 rounded-xl border focus:outline-none focus:ring-2 resize-none ${
+                  darkMode
+                    ? "bg-[#112233] border-gray-600 focus:ring-cyan-400"
+                    : "bg-white border-gray-400 focus:ring-[#93B4D4]"
+                }`}
+              />
+            </label>
+
+            <button
+              type="submit"
+              disabled={status === "sending"}
+              className={`mt-4 w-full rounded-xl py-3 font-semibold transition-all ${
+                darkMode
+                  ? "bg-cyan-500 hover:bg-cyan-600 text-white"
+                  : "bg-[#93B4D4] hover:bg-[#7fa3ca] text-black"
+              }`}
+            >
+              {status === "sending"
+                ? "Enviando..."
+                : status === "success"
+                ? "✅ Enviado correctamente"
+                : status === "error"
+                ? "❌ Error al enviar"
+                : "Enviar mensaje"}
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
   );
 }
 

@@ -1,45 +1,135 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import javeriana from "../assets/javeriana.png";
+import google from "../assets/google.png";
+import ibm from "../assets/ibm.png";
+import redhat from "../assets/redhat.png";
+import samsung from "../assets/samsung.png";
+import sena from "../assets/sena.png";
+import uniandes from "../assets/uniandes.png";
+import piloto from "../assets/piloto.png";
+import redhatpdf from "../assets/redhat.pdf";
+import pilotopdf from "../assets/piloto.pdf";
+import senapdf from "../assets/sena.pdf";
 
 function CursosCertificados({ darkMode }) {
   const [isOpen, setIsOpen] = useState(true);
 
-  const areas = ["Desarrollo", "SAP", "Cloud"];
+  const areas = ["Desarrollo", "Cloud", "Metodologías Ágiles", "Sistemas Operativos"];
 
   const cursos = [
+    // 🧩 DESARROLLO
     {
       area: "Desarrollo",
-      role: "Curso de React Avanzado",
-      company: "Udemy",
-      date: "2024",
-      logo: javeriana,
-      insights: ["Hooks, Context API, optimización de rendimiento."],
-      insignia: "",
-      technologies: ["React", "Hooks", "Context API"],
-      logos: ["icon-react", "icon-hooks", "icon-context"],
+      role: "CET - TIC Desarrollo Web Front-End con HTML, CSS y JavaScript (React)",
+      company: "Universidad de Los Andes",
+      date: "Oct 2025",
+      logo: uniandes,
+      insights: [
+        "Desarrollo de interfaces web interactivas.",
+        "Manejo de componentes, hooks y estados en React.",
+      ],
+      insignia: "https://wallet.xertify.co/certificates/2A0EAF66A002",
+      technologies: ["HTML5", "CSS", "JavaScript", "React"],
+      logos: ["icon-html", "icon-css", "icon-javascript", "icon-react"],
     },
+    {
+      area: "Desarrollo",
+      role: "Diplomado en Programación y Codificación",
+      company: "Samsung Electronics Colombia",
+      date: "Jun 2021",
+      logo: samsung,
+      insights: [
+        "Fundamentos de programación en C y C++.",
+        "Diseño de soluciones interactivas con Arduino y Scratch.",
+      ],
+      insignia: "https://wallet.xertify.co/certificates/EFA11D1AA001?viewMode=regular",
+      technologies: ["C++", "Arduino", "UX Design", "Problem Solving"],
+      logos: ["icon-cpp", "icon-arduino", "icon-ux", "icon-brain"],
+    },
+    {
+      area: "Desarrollo",
+      role: "Análisis para el desarrollo móvil con App Inventor",
+      company: "SENA",
+      date: "Sep 2020",
+      logo: sena,
+      insights: [
+        "Desarrollo de aplicaciones móviles usando App Inventor.",
+        "Introducción al diseño visual de interfaces y lógica de bloques.",
+      ],
+      insignia: senapdf,
+      technologies: ["App Inventor", "Android", "UI Design"],
+      logos: ["icon-appinventor", "icon-android", "icon-ui"],
+    },
+    {
+      area: "Desarrollo",
+      role: "IoT: Programación con Arduinos y Raspberry Pi",
+      company: "Universidad Piloto de Colombia",
+      date: "Oct 2019",
+      logo: piloto,
+      insights: [
+        "Desarrollo de proyectos IoT con Arduino y Raspberry Pi.",
+        "Integración de sensores y sistemas embebidos.",
+      ],
+      insignia: pilotopdf,
+      technologies: ["Arduino", "Raspberry Pi", "IoT"],
+      logos: ["icon-arduino", "icon-raspberry", "icon-iot"],
+    },
+
+    // ☁️ CLOUD
     {
       area: "Cloud",
-      role: "Certificación JavaScript",
-      company: "freeCodeCamp",
-      date: "2023",
-      logo: javeriana,
-      insights: ["DOM, ES6+, y programación funcional."],
-      insignia: "",
-      technologies: ["JavaScript", "ES6", "DOM"],
-      logos: ["icon-javascript", "icon-es6", "icon-dom"],
+      role: "Google Cloud Computing Foundations Certificate",
+      company: "Google",
+      date: "Jul 2025",
+      logo: google,
+      insights: [
+        "Fundamentos de Cloud Computing y servicios de GCP.",
+        "Implementación de soluciones en Cloud Run, Firestore y Dataflow.",
+      ],
+      insignia: "https://www.credly.com/badges/56df403f-bc3f-4289-a7d9-88213affe407/linked_in_profile",
+      technologies: [
+        "Google Cloud Run",
+        "Cloud Dataflow",
+        "Firestore",
+        "Storage",
+      ],
+      logos: [
+        "icon-cloudrun",
+        "icon-dataflow",
+        "icon-firestore",
+        "icon-cloudstorage",
+      ],
+    },
+
+    // 🧠 SISTEMAS / SAP
+    {
+      area: "Metodologías Ágiles",
+      role: "Agile Explorer",
+      company: "IBM",
+      date: "Jun 2025",
+      logo: ibm,
+      insights: [
+        "Gestión ágil con Scrum y Design Thinking.",
+        "Aplicación de metodologías ágiles en desarrollo de software.",
+      ],
+      insignia:
+        "https://www.credly.com/badges/23152632-a3a0-4bf7-9002-f4dac255380c/linked_in_profile",
+      technologies: ["Scrum", "Agile", "Project Management"],
+      logos: ["icon-scrum", "icon-agile", "icon-project"],
     },
     {
-      area: "SAP",
-      role: "Consultor SAP FI",
-      company: "SAP Learning Hub",
-      date: "2024",
-      logo: javeriana,
-      insights: ["Gestión financiera y contabilidad en SAP."],
-      insignia: "",
-      technologies: ["SAP FI", "Contabilidad", "Gestión Financiera"],
-      logos: ["icon-sap", "icon-accounting", "icon-finance"],
+      area: "Sistemas Operativos",
+      role: "Red Hat System Administration I (RH124)",
+      company: "Red Hat",
+      date: "May 2023",
+      logo: redhat,
+      insights: [
+        "Administración básica de sistemas Linux Red Hat.",
+        "Gestión de usuarios, archivos, procesos y permisos.",
+      ],
+      insignia: redhatpdf,
+      technologies: ["Linux", "Red Hat", "SysAdmin"],
+      logos: ["icon-linux", "icon-redhat", "icon-server"],
     },
   ];
 
