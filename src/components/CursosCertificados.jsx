@@ -1,15 +1,15 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import google from "../assets/google.png";
-import ibm from "../assets/ibm.png";
-import redhat from "../assets/redhat.png";
-import samsung from "../assets/samsung.png";
-import sena from "../assets/sena.png";
-import uniandes from "../assets/uniandes.png";
-import piloto from "../assets/piloto.png";
-import redhatpdf from "../assets/redhat.pdf";
-import pilotopdf from "../assets/piloto.pdf";
-import senapdf from "../assets/sena.pdf";
+import google from "../assets/pictures/google.png";
+import ibm from "../assets/pictures/ibm.png";
+import redhat from "../assets/pictures/redhat.png";
+import samsung from "../assets/pictures/samsung.png";
+import sena from "../assets/pictures/sena.png";
+import uniandes from "../assets/pictures/uniandes.png";
+import piloto from "../assets/pictures/piloto.png";
+import redhatpdf from "../assets/certificados/redhat.pdf";
+import pilotopdf from "../assets/certificados/piloto.pdf";
+import senapdf from "../assets/certificados/sena.pdf";
 
 function CursosCertificados({ darkMode }) {
   const [isOpen, setIsOpen] = useState(true);
@@ -135,7 +135,7 @@ function CursosCertificados({ darkMode }) {
 
   return (
     <div
-      className={`w-[90%] max-w-6xl mx-auto pt-0 transition-all duration-300 ${
+      className={`w-[90%] max-w-6xl mx-auto pt-5 transition-all duration-300 ${
         isOpen ? "min-h-screen" : "h-auto"
       }`}
     >
@@ -166,7 +166,7 @@ function CursosCertificados({ darkMode }) {
       {/* Contenido */}
       <div
         className={`overflow-hidden transition-all duration-700 ease-in-out ${
-          isOpen ? "max-h-[5000px] mt-6 opacity-100" : "max-h-0 mt-0 opacity-0"
+          isOpen ? "max-h-[5000px] mt-2 opacity-100" : "max-h-0 mt-0 opacity-0"
         }`}
       >
         {/* Grid estilo collage */}

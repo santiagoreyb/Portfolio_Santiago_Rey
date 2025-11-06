@@ -1,49 +1,162 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import javeriana from "../assets/javeriana.png";
-import colpensiones from "../assets/colpensiones.png";
+
+import javeriana from "../assets/pictures/javeriana.png";
+import awaq from "../assets/pictures/javeriana.png";
+import unity from "../assets/pictures/javeriana.png";
+import android from "../assets/pictures/javeriana.png";
+import net from "../assets/pictures/javeriana.png";
+import python from "../assets/pictures/javeriana.png";
+import portfolio from "../assets/pictures/javeriana.png";
 
 function Proyectos({ darkMode }) {
   const [isOpen, setIsOpen] = useState(true);
 
   const proyectos = [
     {
-      titulo: "React Dashboard",
+      titulo: "NeonCat",
       descripcion:
-        "Panel interactivo con estadísticas dinámicas, gráficos y autenticación.",
-      fecha: "2024",
-      imagenes: [colpensiones, javeriana, javeriana],
-      tecnologias: ["React", "Chart.js", "Firebase"],
-      logos: ["icon-react", "icon-chart", "icon-firebase"],
-      repo: "https://github.com/usuario/react-dashboard",
-      demo: "https://usuario.github.io/react-dashboard",
+        "Desarrollo de un videojuego en Unity para el GameJam de la Sociedad Colombiana de Ingenieros (SCI).",
+      fecha: "Dic 2024 - Ene 2025",
+      imagenes: [unity, awaq],
+      tecnologias: [
+        { name: "C#", logo: "csharp" },
+        { name: "Unity", logo: "unity" },
+        { name: "Blender", logo: "blender" },
+      ],
+      repo: "https://github.com/santiagoreyb/NeonCat",
+      demo: "https://itch.io/neoncat",
     },
     {
-      titulo: "Landing Page Interactiva",
+      titulo: "EcoGuardians 2.0",
       descripcion:
-        "Sitio web animado con scroll dinámico y diseño responsivo moderno.",
+        "Videojuego 3D interactivo que promueve la conservación ambiental, recreando virtualmente la Estación Biológica del Norte de Caldas. Desarrollado con AWAQ ONGD.",
+      fecha: "Feb 2024 - Nov 2024",
+      imagenes: [awaq, unity],
+      tecnologias: [
+        { name: "C#", logo: "csharp" },
+        { name: "Unity", logo: "unity" },
+        { name: "Blender", logo: "blender" },
+        { name: "Illustrator", logo: "illustrator" },
+        { name: "Photoshop", logo: "photoshop" },
+      ],
+      demo: "https://awaqongd.itch.io/ecoguardians",
+    },
+    {
+      titulo: "CuantoNecesitoPUJ",
+      descripcion:
+        "Aplicación web desarrollada con el grupo estudiantil ACM Javeriana. Permite calcular la nota mínima para aprobar una materia, mejorando la planificación académica.",
+      fecha: "Feb 2021 - Jun 2021",
+      imagenes: [javeriana],
+      tecnologias: [
+        { name: "Angular", logo: "angular" },
+        { name: "HTML", logo: "html" },
+        { name: "CSS", logo: "css" },
+        { name: "JavaScript", logo: "javascript" },
+        { name: "REST API", logo: "api" },
+      ],
+      repo: "https://github.com/santiagoreyb/CuantoNecesitoPUJ",
+    },
+    {
+      titulo: "Redes Neuronales - Clasificación de Vinos",
+      descripcion:
+        "Proyecto de machine learning que analiza la calidad del vino utilizando redes neuronales feed-forward con el dataset Wine Quality (UCI).",
       fecha: "2023",
-      imagenes: [javeriana, javeriana],
-      tecnologias: ["HTML", "CSS", "JavaScript"],
-      logos: ["icon-html", "icon-css", "icon-javascript"],
-      repo: "https://github.com/usuario/landing-page",
-      demo: "https://usuario.github.io/landing-page",
+      imagenes: [python],
+      tecnologias: [
+        { name: "Python", logo: "python" },
+        { name: "TensorFlow", logo: "tensorflow" },
+        { name: "Pandas", logo: "pandas" },
+        { name: "NumPy", logo: "numpy" },
+      ],
+      repo: "https://github.com/santiagoreyb/Redes_Neuronales",
     },
     {
-      titulo: "API REST Node.js",
+      titulo: "Organizador de Fotos",
       descripcion:
-        "Backend para gestión de usuarios, autenticación JWT y conexión a MongoDB.",
+        "Programa en Python que organiza automáticamente fotos y videos por la fecha en que fueron tomados.",
+      fecha: "2023",
+      imagenes: [python],
+      tecnologias: [
+        { name: "Python", logo: "python" },
+        { name: "OS", logo: "os" },
+        { name: "Datetime", logo: "calendar" },
+      ],
+      repo: "https://github.com/santiagoreyb/Organizador_Fotos",
+    },
+    {
+      titulo: "WhereIsIt",
+      descripcion:
+        "Aplicación móvil para seguimiento de dispositivos, con autenticación, roles y geolocalización. Desarrollada en Kotlin con Firebase y APIs de Google Maps y OSM.",
       fecha: "2024",
-      imagenes: [javeriana, javeriana],
-      tecnologias: ["Node.js", "Express", "MongoDB"],
-      logos: ["icon-nodejs", "icon-express", "icon-mongodb"],
-      repo: "https://github.com/usuario/api-node",
+      imagenes: [android],
+      tecnologias: [
+        { name: "Kotlin", logo: "kotlin" },
+        { name: "Firebase", logo: "firebase" },
+        { name: "Google Maps", logo: "googlemaps" },
+        { name: "OSM", logo: "osm" },
+      ],
+      repo: "https://github.com/santiagoreyb/WhereIsIt",
+    },
+    {
+      titulo: "University Admissions",
+      descripcion:
+        "Aplicación para gestión de aspirantes universitarios, consultas de pagos y registros de verificación. Implementada con .NET y Oracle Database.",
+      fecha: "2024",
+      imagenes: [net],
+      tecnologias: [
+        { name: ".NET 8", logo: "dotnet" },
+        { name: "Razor Views", logo: "razor" },
+        { name: "Oracle DB", logo: "oracle" },
+      ],
+      repo: "https://github.com/santiagoreyb/University-Admissions",
+    },
+    {
+      titulo: "MultiActivityApp",
+      descripcion:
+        "Aplicación Android con múltiples actividades para practicar fundamentos de desarrollo móvil en Android Studio.",
+      fecha: "2022",
+      imagenes: [android],
+      tecnologias: [
+        { name: "Kotlin", logo: "kotlin" },
+        { name: "Android Studio", logo: "androidstudio" },
+        { name: "XML UI", logo: "xml" },
+      ],
+      repo: "https://github.com/santiagoreyb/MultiActivityApp",
+    },
+    {
+      titulo: "Sistema de Medición de Calidad del Agua",
+      descripcion:
+        "Proyecto distribuido que monitorea parámetros como PH, temperatura y turbidez usando patrones de comunicación síncronos y asíncronos (Pub/Sub).",
+      fecha: "2024",
+      imagenes: [python],
+      tecnologias: [
+        { name: "Python", logo: "python" },
+        { name: "MQTT", logo: "mqtt" },
+        { name: "Pub/Sub", logo: "pubsub" },
+        { name: "IoT", logo: "iot" },
+      ],
+      repo: "https://github.com/santiagoreyb/WaterQualitySystem",
+    },
+    {
+      titulo: "Portafolio Web",
+      descripcion:
+        "Diseño y desarrollo de este portafolio en React con animaciones y modo oscuro. Incluye visualización dinámica de proyectos e integración con Framer Motion.",
+      fecha: "2025",
+      imagenes: [portfolio],
+      tecnologias: [
+        { name: "React", logo: "react" },
+        { name: "TailwindCSS", logo: "tailwindcss" },
+        { name: "Framer Motion", logo: "framer" },
+        { name: "Vite", logo: "vite" },
+      ],
+      repo: "https://github.com/santiagoreyb/portfolio",
     },
   ];
 
   return (
     <div
-      className={`w-[90%] max-w-6xl mx-auto pt-10 transition-all duration-300 ${
+      className={`w-[90%] max-w-6xl mx-auto pt-5 transition-all duration-300 ${
         isOpen ? "min-h-screen" : "h-auto"
       }`}
     >
@@ -132,7 +245,6 @@ function ProyectoCard({ proyecto, darkMode, delay }) {
           />
         </AnimatePresence>
 
-        {/* Flechas */}
         {proyecto.imagenes.length > 1 && (
           <>
             <button
@@ -157,27 +269,12 @@ function ProyectoCard({ proyecto, darkMode, delay }) {
             </button>
           </>
         )}
-
-        {/* Indicadores */}
-        <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-2">
-          {proyecto.imagenes.map((_, i) => (
-            <div
-              key={i}
-              className={`w-2 h-2 rounded-full ${
-                i === index
-                  ? "bg-cyan-400"
-                  : darkMode
-                  ? "bg-gray-500/50"
-                  : "bg-gray-400/70"
-              }`}
-            ></div>
-          ))}
-        </div>
       </div>
 
-      {/* Info proyecto */}
+      {/* Info */}
       <div className="p-5 flex flex-col">
-        <div className="flex items-center justify-between mb-3">
+        {/* Título + botones */}
+        <div className="flex items-center justify-between flex-wrap gap-2 mb-2">
           <h4
             className={`text-lg font-semibold ${
               darkMode ? "text-cyan-300" : "text-gray-800"
@@ -192,7 +289,7 @@ function ProyectoCard({ proyecto, darkMode, delay }) {
                 href={proyecto.demo}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`px-3 py-1 text-xs rounded-md border transition-all duration-300 ${
+                className={`px-3 py-1 text-xs rounded-md border transition-all ${
                   darkMode
                     ? "bg-cyan-400/10 border-cyan-400/40 text-cyan-300 hover:bg-cyan-400/20"
                     : "bg-cyan-100 border-cyan-300 text-cyan-700 hover:bg-cyan-200"
@@ -206,7 +303,7 @@ function ProyectoCard({ proyecto, darkMode, delay }) {
                 href={proyecto.repo}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`px-3 py-1 text-xs rounded-md border transition-all duration-300 ${
+                className={`px-3 py-1 text-xs rounded-md border transition-all ${
                   darkMode
                     ? "bg-cyan-400/10 border-cyan-400/40 text-cyan-300 hover:bg-cyan-400/20"
                     : "bg-cyan-100 border-cyan-300 text-cyan-700 hover:bg-cyan-200"
@@ -218,6 +315,7 @@ function ProyectoCard({ proyecto, darkMode, delay }) {
           </div>
         </div>
 
+        {/* Descripción */}
         <p
           className={`text-sm mb-3 leading-relaxed ${
             darkMode ? "text-gray-300" : "text-gray-700"
@@ -226,28 +324,28 @@ function ProyectoCard({ proyecto, darkMode, delay }) {
           {proyecto.descripcion}
         </p>
 
-        {proyecto.tecnologias && (
-          <div className="flex flex-wrap gap-2 mt-2">
-            {proyecto.tecnologias.map((tech, i) => (
-              <span
-                key={i}
-                className={`flex items-center gap-2 px-3 py-1 rounded-full text-sm border transition-all duration-300 ${
-                  darkMode
-                    ? "bg-cyan-400/10 border-cyan-400/40 text-cyan-300 hover:bg-cyan-400/20"
-                    : "bg-cyan-100 border-cyan-300 text-cyan-700 hover:bg-cyan-200"
-                }`}
-              >
-                <svg className="w-5 h-5" aria-hidden="true">
-                  <use href={`/portfolio.min.svg#${proyecto.logos[i]}`} />
-                </svg>
-                {tech}
-              </span>
-            ))}
-          </div>
-        )}
+        {/* Tecnologías */}
+        <div className="flex flex-wrap gap-2 mt-2 text-sm">
+          {proyecto.tecnologias.map((tech, i) => (
+            <span
+              key={i}
+              className={`flex items-center gap-1 px-3 py-1 rounded-full text-xs border ${
+                darkMode
+                  ? "bg-cyan-400/10 border-cyan-400/40 text-cyan-300"
+                  : "bg-cyan-100 border-cyan-300 text-cyan-700"
+              }`}
+            >
+              <svg className="w-4 h-4 fill-current">
+                <use xlinkHref={`/portfolio.min.svg#${tech.logo}`} />
+              </svg>
+              {tech.name}
+            </span>
+          ))}
+        </div>
       </div>
     </motion.div>
   );
 }
+
 
 export default Proyectos;

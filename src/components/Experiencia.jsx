@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import colpensiones from "../assets/colpensiones.png";
+import colpensiones from "../assets/pictures/colpensiones.png";
 
 function Experiencia({ darkMode }) {
   const [isOpen, setIsOpen] = useState(true);

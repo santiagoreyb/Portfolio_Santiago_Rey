@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react"; 
 import { motion } from "framer-motion";
 
 function Habilidades({ darkMode }) {
@@ -9,8 +9,8 @@ function Habilidades({ darkMode }) {
       titulo: "💻 Frontend",
       tecnologias: [
         { nombre: "React", logo: "icon-react" },
-        { nombre: "Next.js", logo: "icon-nextjs" },
         { nombre: "JavaScript", logo: "icon-javascript" },
+        { nombre: "TypeScript", logo: "icon-typescript" },
         { nombre: "HTML5", logo: "icon-html" },
         { nombre: "CSS3", logo: "icon-css" },
         { nombre: "Tailwind", logo: "icon-tailwind" },
@@ -22,9 +22,62 @@ function Habilidades({ darkMode }) {
       tecnologias: [
         { nombre: "Node.js", logo: "icon-nodejs" },
         { nombre: "Express", logo: "icon-express" },
-        { nombre: "Python", logo: "icon-python" },
-        { nombre: "Django", logo: "icon-django" },
-        { nombre: "FastAPI", logo: "icon-fastapi" },
+        { nombre: "C#", logo: "icon-csharp" },
+        { nombre: ".NET", logo: "icon-dotnet" },
+        { nombre: "Java", logo: "icon-java" },
+        { nombre: "Python (básico)", logo: "icon-python" },
+      ],
+    },
+    {
+      titulo: "🤖 Inteligencia Artificial",
+      tecnologias: [
+        { nombre: "TensorFlow", logo: "icon-tensorflow" },
+        { nombre: "PyTorch", logo: "icon-pytorch" },
+        { nombre: "Scikit-learn", logo: "icon-scikitlearn" },
+        { nombre: "Keras", logo: "icon-keras" },
+        { nombre: "OpenCV", logo: "icon-opencv" },
+        { nombre: "Pandas", logo: "icon-pandas" },
+        { nombre: "NumPy", logo: "icon-numpy" },
+        { nombre: "IA Generativa", logo: "icon-ai" },
+      ],
+    },
+    {
+      titulo: "☁️ Cloud",
+      tecnologias: [
+        { nombre: "Google Cloud Platform", logo: "icon-gcp" },
+        { nombre: "Microsoft Azure", logo: "icon-azure" },
+        { nombre: "Firebase", logo: "icon-firebase" },
+        { nombre: "Firestorage", logo: "icon-firestorage" },
+        { nombre: "Cloud Functions", logo: "icon-cloudfunctions" },
+        { nombre: "Kubernetes", logo: "icon-kubernetes" },
+      ],
+    },
+    {
+      titulo: "🧩 DevOps",
+      tecnologias: [
+        { nombre: "Docker", logo: "icon-docker" },
+        { nombre: "Git", logo: "icon-git" },
+        { nombre: "GitHub", logo: "icon-github" },
+        { nombre: "GitHub Actions", logo: "icon-githubactions" },
+        { nombre: "CI/CD", logo: "icon-cicd" },
+        { nombre: "Linux", logo: "icon-linux" },
+        { nombre: "Bash", logo: "icon-bash" },
+      ],
+    },
+    {
+      titulo: "🖥️ Sistemas Operativos",
+      tecnologias: [
+        { nombre: "Ubuntu", logo: "icon-ubuntu" },
+        { nombre: "Linux", logo: "icon-linux" },
+        { nombre: "Apache", logo: "icon-apache" },
+        { nombre: "Windows Server", logo: "icon-windowsserver" },
+      ],
+    },
+    {
+      titulo: "📊 SAP (básico)",
+      tecnologias: [
+        { nombre: "SAP Fiori", logo: "icon-sapfiori" },
+        { nombre: "SAP BTP", logo: "icon-sapbtp" },
       ],
     },
     {
@@ -37,14 +90,25 @@ function Habilidades({ darkMode }) {
       ],
     },
     {
-      titulo: "🛠️ Herramientas y DevOps",
+      titulo: "📱 Desarrollo Móvil",
       tecnologias: [
-        { nombre: "Git", logo: "icon-git" },
-        { nombre: "Docker", logo: "icon-docker" },
-        { nombre: "Linux", logo: "icon-linux" },
-        { nombre: "Vite", logo: "icon-vite" },
+        { nombre: "Android", logo: "icon-android" },
+        { nombre: "iOS", logo: "icon-ios" },
+        { nombre: "Kotlin", logo: "icon-kotlin" },
+        { nombre: "Dart", logo: "icon-dart" },
+        { nombre: "Flutter (básico)", logo: "icon-flutter" },
+      ],
+    },
+    {
+      titulo: "🛠️ Herramientas",
+      tecnologias: [
         { nombre: "VS Code", logo: "icon-vscode" },
+        { nombre: "IntelliJ", logo: "icon-intellij" },
+        { nombre: "Office", logo: "icon-office" },
+        { nombre: "Jira", logo: "icon-jira" },
+        { nombre: "Trello", logo: "icon-trello" },
         { nombre: "Figma", logo: "icon-figma" },
+        { nombre: "Vite", logo: "icon-vite" },
       ],
     },
   ];
@@ -55,7 +119,6 @@ function Habilidades({ darkMode }) {
         isOpen ? "min-h-screen" : "h-auto"
       }`}
     >
-      {/* Encabezado */}
       <div className="relative mb-6">
         <h2
           className={`text-3xl md:text-4xl font-bold tracking-wide text-center ${
@@ -85,7 +148,6 @@ function Habilidades({ darkMode }) {
         }`}
       ></div>
 
-      {/* Contenido */}
       <div
         className={`overflow-hidden transition-all duration-700 ease-in-out ${
           isOpen ? "max-h-[5000px] mt-6 opacity-100" : "max-h-0 mt-0 opacity-0"
@@ -144,7 +206,7 @@ function Categoria({ categoria, darkMode, delay }) {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay }}
-      className={`relative rounded-2xl shadow-md border p-5 transition-all duration-300 backdrop-blur-md ${
+      className={`relative rounded-2xl shadow-md border pt-5 transition-all duration-300 backdrop-blur-md ${
         darkMode
           ? "bg-[#0f172a]/80 border-cyan-500/30 hover:border-cyan-400/60"
           : "bg-[#cdd3e1] border-gray-300 hover:border-gray-400"
@@ -158,7 +220,6 @@ function Categoria({ categoria, darkMode, delay }) {
         {categoria.titulo}
       </h3>
 
-      {/* Carrusel */}
       <div className="relative">
         {canScrollLeft && (
           <button
@@ -175,7 +236,7 @@ function Categoria({ categoria, darkMode, delay }) {
 
         <div
           ref={containerRef}
-          className="flex gap-2 overflow-x-auto scrollbar-hide scroll-smooth px-10"
+          className="flex gap-2 overflow-x-auto scrollbar-hide scroll-smooth px-15"
         >
           {categoria.tecnologias.map((tech, i) => (
             <div

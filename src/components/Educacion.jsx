@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import javeriana from "../assets/javeriana.png";
+import javeriana from "../assets/pictures/javeriana.png";
 
 function Educacion({ darkMode }) {
   const [isOpen, setIsOpen] = useState(true);
@@ -21,7 +21,7 @@ function Educacion({ darkMode }) {
   ];
 
   return (
-    <div className="w-[90%] max-w-6xl mx-auto pt-0 transition-all duration-300 h-auto">
+    <div className="w-[90%] max-w-6xl mx-auto pt-5 transition-all duration-300 h-auto">
       {/* Encabezado */}
       <div className="relative mb-6">
         <h2

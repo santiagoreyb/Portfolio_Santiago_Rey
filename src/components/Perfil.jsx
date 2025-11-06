@@ -1,6 +1,6 @@
-import { FaFileAlt } from "react-icons/fa";
-import perfil from "../assets/profile.png";
-import cv from "../assets/Hoja de Vida - Santiago Camilo Rey Benavides.pdf"; // 📄 Importa tu CV
+import { FaFileAlt, FaGithub, FaLinkedin } from "react-icons/fa";
+import perfil from "../assets/pictures/profile.png";
+import cv from "../assets/CV/Hoja de Vida - Santiago Camilo Rey Benavides.pdf"; // 📄 Importa tu CV
 
 function Perfil({ darkMode }) {
   return (
@@ -28,9 +28,7 @@ function Perfil({ darkMode }) {
                        bg-[#7EC8E3] text-[#2C3E50] font-bold py-2 rounded-xl 
                        shadow-md hover:scale-105 transition-transform duration-200"
           >
-            <svg className="w-6 h-6" aria-hidden="true">
-              <use href="/portfolio.min.svg#icon-linkedin" />
-            </svg>
+            <FaLinkedin className="w-6 h-6" />
             <span>LinkedIn</span>
           </a>
 
@@ -43,9 +41,7 @@ function Perfil({ darkMode }) {
                        bg-[#7EC8E3] text-[#2C3E50] font-bold py-2 rounded-xl 
                        shadow-md hover:scale-105 transition-transform duration-200"
           >
-            <svg className="w-6 h-6" aria-hidden="true">
-              <use href="/portfolio.min.svg#icon-github" />
-            </svg>
+            <FaGithub className="w-6 h-6" />
             <span>GitHub</span>
           </a>
 
@@ -61,7 +57,6 @@ function Perfil({ darkMode }) {
             <FaFileAlt className="w-6 h-6" />
             <span>Ver CV</span>
           </a>
-
         </div>
       </div>
 

@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin, FaFileAlt } from "react-icons/fa";
-import cv from "../assets/Hoja de Vida - Santiago Camilo Rey Benavides.pdf";
+import cv from "../assets/CV/Hoja de Vida - Santiago Camilo Rey Benavides.pdf";
 function Footer({ darkMode }) {
   return (
     <footer
