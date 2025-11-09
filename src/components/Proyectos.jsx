@@ -20,9 +20,9 @@ function Proyectos({ darkMode }) {
       fecha: "Dic 2024 - Ene 2025",
       imagenes: [unity, awaq],
       tecnologias: [
-        { name: "C#", logo: "csharp" },
-        { name: "Unity", logo: "unity" },
-        { name: "Blender", logo: "blender" },
+        { name: "C#", logo: "icon-c-sharp-logo" },
+        { name: "Unity", logo: "icon-unity" },
+        { name: "Blender", logo: "icon-blender-3d" },
       ],
       repo: "https://github.com/santiagoreyb/NeonCat",
       demo: "https://itch.io/neoncat",
@@ -34,11 +34,11 @@ function Proyectos({ darkMode }) {
       fecha: "Feb 2024 - Nov 2024",
       imagenes: [awaq, unity],
       tecnologias: [
-        { name: "C#", logo: "csharp" },
-        { name: "Unity", logo: "unity" },
-        { name: "Blender", logo: "blender" },
-        { name: "Illustrator", logo: "illustrator" },
-        { name: "Photoshop", logo: "photoshop" },
+        { name: "C#", logo: "icon-c-sharp-logo" },
+        { name: "Unity", logo: "icon-unity" },
+        { name: "Blender", logo: "icon-blender-3d" },
+        { name: "Illustrator", logo: "icon-adobe-illustrator" },
+        { name: "Photoshop", logo: "icon-adobe-photoshop" },
       ],
       demo: "https://awaqongd.itch.io/ecoguardians",
     },
@@ -49,11 +49,11 @@ function Proyectos({ darkMode }) {
       fecha: "Feb 2021 - Jun 2021",
       imagenes: [javeriana],
       tecnologias: [
-        { name: "Angular", logo: "angular" },
-        { name: "HTML", logo: "html" },
-        { name: "CSS", logo: "css" },
-        { name: "JavaScript", logo: "javascript" },
-        { name: "REST API", logo: "api" },
+        { name: "Angular", logo: "icon-angularjs" },
+        { name: "HTML", logo: "icon-html-5" },
+        { name: "CSS", logo: "icon-css3" },
+        { name: "JavaScript", logo: "icon-javascript" },
+        { name: "REST API", logo: "icon-api-settings" },
       ],
       repo: "https://github.com/santiagoreyb/CuantoNecesitoPUJ",
     },
@@ -64,10 +64,10 @@ function Proyectos({ darkMode }) {
       fecha: "2023",
       imagenes: [python],
       tecnologias: [
-        { name: "Python", logo: "python" },
-        { name: "TensorFlow", logo: "tensorflow" },
-        { name: "Pandas", logo: "pandas" },
-        { name: "NumPy", logo: "numpy" },
+        { name: "Python", logo: "icon-python" },
+        { name: "TensorFlow", logo: "icon-tensorflow" },
+        { name: "Pandas", logo: "icon-pandas" },
+        { name: "NumPy", logo: "icon-numpy" },
       ],
       repo: "https://github.com/santiagoreyb/Redes_Neuronales",
     },
@@ -78,9 +78,9 @@ function Proyectos({ darkMode }) {
       fecha: "2023",
       imagenes: [python],
       tecnologias: [
-        { name: "Python", logo: "python" },
-        { name: "OS", logo: "os" },
-        { name: "Datetime", logo: "calendar" },
+        { name: "Python", logo: "icon-python" },
+        { name: "OS", logo: "icon-server-windows" },
+        { name: "Datetime", logo: "icon-calendar" },
       ],
       repo: "https://github.com/santiagoreyb/Organizador_Fotos",
     },
@@ -91,10 +91,10 @@ function Proyectos({ darkMode }) {
       fecha: "2024",
       imagenes: [android],
       tecnologias: [
-        { name: "Kotlin", logo: "kotlin" },
-        { name: "Firebase", logo: "firebase" },
-        { name: "Google Maps", logo: "googlemaps" },
-        { name: "OSM", logo: "osm" },
+        { name: "Kotlin", logo: "icon-kotlin" },
+        { name: "Firebase", logo: "icon-firebase" },
+        { name: "Google Maps", logo: "icon-google-maps-new" },
+        { name: "OSM", logo: "icon-map-marker" },
       ],
       repo: "https://github.com/santiagoreyb/WhereIsIt",
     },
@@ -105,9 +105,9 @@ function Proyectos({ darkMode }) {
       fecha: "2024",
       imagenes: [net],
       tecnologias: [
-        { name: ".NET 8", logo: "dotnet" },
-        { name: "Razor Views", logo: "razor" },
-        { name: "Oracle DB", logo: "oracle" },
+        { name: ".NET 8", logo: "icon-net-framework" },
+        { name: "Razor Views", logo: "icon-visual-studio" },
+        { name: "Oracle DB", logo: "icon-oracle-logo" },
       ],
       repo: "https://github.com/santiagoreyb/University-Admissions",
     },
@@ -118,9 +118,9 @@ function Proyectos({ darkMode }) {
       fecha: "2022",
       imagenes: [android],
       tecnologias: [
-        { name: "Kotlin", logo: "kotlin" },
-        { name: "Android Studio", logo: "androidstudio" },
-        { name: "XML UI", logo: "xml" },
+        { name: "Kotlin", logo: "icon-kotlin" },
+        { name: "Android Studio", logo: "icon-android-studio" },
+        { name: "XML UI", logo: "icon-xml" },
       ],
       repo: "https://github.com/santiagoreyb/MultiActivityApp",
     },
@@ -131,10 +131,10 @@ function Proyectos({ darkMode }) {
       fecha: "2024",
       imagenes: [python],
       tecnologias: [
-        { name: "Python", logo: "python" },
-        { name: "MQTT", logo: "mqtt" },
-        { name: "Pub/Sub", logo: "pubsub" },
-        { name: "IoT", logo: "iot" },
+        { name: "Python", logo: "icon-python" },
+        { name: "MQTT", logo: "icon-cloud-development" },
+        { name: "Pub/Sub", logo: "icon-cloud-firestore" },
+        { name: "IoT", logo: "icon-external-iot-fintech-becris-lineal-color-becris" },
       ],
       repo: "https://github.com/santiagoreyb/WaterQualitySystem",
     },
@@ -145,10 +145,10 @@ function Proyectos({ darkMode }) {
       fecha: "2025",
       imagenes: [portfolio],
       tecnologias: [
-        { name: "React", logo: "react" },
-        { name: "TailwindCSS", logo: "tailwindcss" },
-        { name: "Framer Motion", logo: "framer" },
-        { name: "Vite", logo: "vite" },
+        { name: "React", logo: "icon-react" },
+        { name: "TailwindCSS", logo: "icon-tailwind_css" },
+        { name: "Framer Motion", logo: "icon-innovation" },
+        { name: "Vite", logo: "icon-vite" },
       ],
       repo: "https://github.com/santiagoreyb/portfolio",
     },
@@ -272,52 +272,16 @@ function ProyectoCard({ proyecto, darkMode, delay }) {
       </div>
 
       {/* Info */}
-      <div className="p-5 flex flex-col">
-        {/* Título + botones */}
-        <div className="flex items-center justify-between flex-wrap gap-2 mb-2">
-          <h4
-            className={`text-lg font-semibold ${
-              darkMode ? "text-cyan-300" : "text-gray-800"
-            }`}
-          >
-            {proyecto.titulo}
-          </h4>
-
-          <div className="flex gap-2">
-            {proyecto.demo && (
-              <a
-                href={proyecto.demo}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`px-3 py-1 text-xs rounded-md border transition-all ${
-                  darkMode
-                    ? "bg-cyan-400/10 border-cyan-400/40 text-cyan-300 hover:bg-cyan-400/20"
-                    : "bg-cyan-100 border-cyan-300 text-cyan-700 hover:bg-cyan-200"
-                }`}
-              >
-                🚀 Demo
-              </a>
-            )}
-            {proyecto.repo && (
-              <a
-                href={proyecto.repo}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`px-3 py-1 text-xs rounded-md border transition-all ${
-                  darkMode
-                    ? "bg-cyan-400/10 border-cyan-400/40 text-cyan-300 hover:bg-cyan-400/20"
-                    : "bg-cyan-100 border-cyan-300 text-cyan-700 hover:bg-cyan-200"
-                }`}
-              >
-                💾 Repo
-              </a>
-            )}
-          </div>
-        </div>
-
-        {/* Descripción */}
+      <div className="p-4">
+        <h3
+          className={`text-xl font-semibold mb-2 ${
+            darkMode ? "text-cyan-300" : "text-gray-800"
+          }`}
+        >
+          {proyecto.titulo}
+        </h3>
         <p
-          className={`text-sm mb-3 leading-relaxed ${
+          className={`text-sm mb-3 ${
             darkMode ? "text-gray-300" : "text-gray-700"
           }`}
         >
@@ -325,27 +289,54 @@ function ProyectoCard({ proyecto, darkMode, delay }) {
         </p>
 
         {/* Tecnologías */}
-        <div className="flex flex-wrap gap-2 mt-2 text-sm">
-          {proyecto.tecnologias.map((tech, i) => (
-            <span
+        <div className="flex flex-wrap items-center gap-2 mt-3">
+          {proyecto.tecnologias.map((tec, i) => (
+            <div
               key={i}
-              className={`flex items-center gap-1 px-3 py-1 rounded-full text-xs border ${
+              className="flex items-center gap-1 text-sm font-medium px-2 py-1 rounded-md bg-white/10"
+            >
+              <svg className="w-5 h-5" fill="currentColor">
+                <use href={`/portfolio.min.svg#${tec.logo}`} />
+              </svg>
+              <span>{tec.name}</span>
+            </div>
+          ))}
+        </div>
+
+        {/* Enlaces */}
+        <div className="flex gap-3 mt-4">
+          {proyecto.repo && (
+            <a
+              href={proyecto.repo}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`text-sm font-semibold px-3 py-1 rounded-md ${
                 darkMode
-                  ? "bg-cyan-400/10 border-cyan-400/40 text-cyan-300"
-                  : "bg-cyan-100 border-cyan-300 text-cyan-700"
+                  ? "bg-cyan-600 hover:bg-cyan-500 text-white"
+                  : "bg-gray-800 hover:bg-gray-700 text-white"
               }`}
             >
-              <svg className="w-4 h-4 fill-current">
-                <use xlinkHref={`/portfolio.min.svg#${tech.logo}`} />
-              </svg>
-              {tech.name}
-            </span>
-          ))}
+              Repo
+            </a>
+          )}
+          {proyecto.demo && (
+            <a
+              href={proyecto.demo}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`text-sm font-semibold px-3 py-1 rounded-md ${
+                darkMode
+                  ? "bg-cyan-600 hover:bg-cyan-500 text-white"
+                  : "bg-gray-800 hover:bg-gray-700 text-white"
+              }`}
+            >
+              Demo
+            </a>
+          )}
         </div>
       </div>
     </motion.div>
   );
 }
-
 
 export default Proyectos;

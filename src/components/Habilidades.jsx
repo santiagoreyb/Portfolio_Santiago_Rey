@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react"; 
+import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 
 function Habilidades({ darkMode }) {
@@ -9,23 +9,29 @@ function Habilidades({ darkMode }) {
       titulo: "💻 Frontend",
       tecnologias: [
         { nombre: "React", logo: "icon-react" },
+        { nombre: "Angular", logo: "icon-angularjs" },
         { nombre: "JavaScript", logo: "icon-javascript" },
         { nombre: "TypeScript", logo: "icon-typescript" },
-        { nombre: "HTML5", logo: "icon-html" },
-        { nombre: "CSS3", logo: "icon-css" },
-        { nombre: "Tailwind", logo: "icon-tailwind" },
-        { nombre: "Framer Motion", logo: "icon-framer" },
+        { nombre: "HTML5", logo: "icon-html-5" },
+        { nombre: "CSS3", logo: "icon-css3" },
+        { nombre: "Tailwind CSS", logo: "icon-tailwind_css" },
+        { nombre: "Bootstrap", logo: "icon-bootstrap" },
+        { nombre: "Vite", logo: "icon-vite" },
       ],
     },
     {
       titulo: "⚙️ Backend",
       tecnologias: [
-        { nombre: "Node.js", logo: "icon-nodejs" },
-        { nombre: "Express", logo: "icon-express" },
-        { nombre: "C#", logo: "icon-csharp" },
-        { nombre: ".NET", logo: "icon-dotnet" },
-        { nombre: "Java", logo: "icon-java" },
-        { nombre: "Python (básico)", logo: "icon-python" },
+        { nombre: "C#", logo: "icon-c-sharp-logo" },
+        { nombre: ".NET", logo: "icon-net-framework" },
+        { nombre: "Java", logo: "icon-java-coffee-cup-logo" },
+        { nombre: "Python", logo: "icon-python" },
+        { nombre: "C++", logo: "icon-c-plus-plus-logo" },
+        { nombre: "C", logo: "icon-c-programming" },
+        {
+          nombre: "Apache",
+          logo: "icon-external-apache-a-free-and-open-source-cross-platform-web-server-software-logo-shadow-tal-revivo",
+        },
       ],
     },
     {
@@ -33,82 +39,82 @@ function Habilidades({ darkMode }) {
       tecnologias: [
         { nombre: "TensorFlow", logo: "icon-tensorflow" },
         { nombre: "PyTorch", logo: "icon-pytorch" },
-        { nombre: "Scikit-learn", logo: "icon-scikitlearn" },
         { nombre: "Keras", logo: "icon-keras" },
-        { nombre: "OpenCV", logo: "icon-opencv" },
         { nombre: "Pandas", logo: "icon-pandas" },
         { nombre: "NumPy", logo: "icon-numpy" },
-        { nombre: "IA Generativa", logo: "icon-ai" },
+        { nombre: "IA Generativa", logo: "icon-ai-generated-code-2" }, // nuevo ID
       ],
     },
     {
-      titulo: "☁️ Cloud",
+      titulo: "☁️ Cloud y DevOps",
       tecnologias: [
-        { nombre: "Google Cloud Platform", logo: "icon-gcp" },
-        { nombre: "Microsoft Azure", logo: "icon-azure" },
+        { nombre: "Google Cloud", logo: "icon-google-cloud" },
+        { nombre: "Microsoft Azure", logo: "icon-azure-1" },
+        { nombre: "Amazon Web Services", logo: "icon-amazon-web-services" },
         { nombre: "Firebase", logo: "icon-firebase" },
-        { nombre: "Firestorage", logo: "icon-firestorage" },
-        { nombre: "Cloud Functions", logo: "icon-cloudfunctions" },
-        { nombre: "Kubernetes", logo: "icon-kubernetes" },
-      ],
-    },
-    {
-      titulo: "🧩 DevOps",
-      tecnologias: [
         { nombre: "Docker", logo: "icon-docker" },
+        { nombre: "Kubernetes", logo: "icon-kubernetes" },
         { nombre: "Git", logo: "icon-git" },
         { nombre: "GitHub", logo: "icon-github" },
-        { nombre: "GitHub Actions", logo: "icon-githubactions" },
-        { nombre: "CI/CD", logo: "icon-cicd" },
-        { nombre: "Linux", logo: "icon-linux" },
-        { nombre: "Bash", logo: "icon-bash" },
-      ],
-    },
-    {
-      titulo: "🖥️ Sistemas Operativos",
-      tecnologias: [
-        { nombre: "Ubuntu", logo: "icon-ubuntu" },
-        { nombre: "Linux", logo: "icon-linux" },
-        { nombre: "Apache", logo: "icon-apache" },
-        { nombre: "Windows Server", logo: "icon-windowsserver" },
-      ],
-    },
-    {
-      titulo: "📊 SAP (básico)",
-      tecnologias: [
-        { nombre: "SAP Fiori", logo: "icon-sapfiori" },
-        { nombre: "SAP BTP", logo: "icon-sapbtp" },
       ],
     },
     {
       titulo: "🗄️ Bases de Datos",
       tecnologias: [
-        { nombre: "PostgreSQL", logo: "icon-postgresql" },
-        { nombre: "MongoDB", logo: "icon-mongodb" },
-        { nombre: "MySQL", logo: "icon-mysql" },
-        { nombre: "Firebase", logo: "icon-firebase" },
+        { nombre: "PostgreSQL", logo: "icon-postgreesql" },
+        {
+          nombre: "MySQL",
+          logo: "icon-external-mysql-an-open-source-relational-database-management-system-logo-color-tal-revivo",
+        },
+        {
+          nombre: "MongoDB",
+          logo: "icon-external-mongodb-a-cross-platform-document-oriented-database-program-logo-color-tal-revivo",
+        },
+        { nombre: "SQL Server", logo: "icon-microsoft-sql-server" },
+        { nombre: "Oracle", logo: "icon-oracle-logo" }, // Oracle en DBs
+        { nombre: "Firebase DB", logo: "icon-firebase" },
       ],
     },
     {
       titulo: "📱 Desarrollo Móvil",
       tecnologias: [
-        { nombre: "Android", logo: "icon-android" },
-        { nombre: "iOS", logo: "icon-ios" },
+        { nombre: "Android", logo: "icon-android-os" },
         { nombre: "Kotlin", logo: "icon-kotlin" },
-        { nombre: "Dart", logo: "icon-dart" },
+        { nombre: "Dart (básico)", logo: "icon-dart" },
         { nombre: "Flutter (básico)", logo: "icon-flutter" },
+        { nombre: "Android Studio", logo: "icon-android-studio" },
+        { nombre: "Unity", logo: "icon-unity" },
       ],
     },
     {
-      titulo: "🛠️ Herramientas",
+      titulo: "🖥️ Sistemas Operativos",
       tecnologias: [
-        { nombre: "VS Code", logo: "icon-vscode" },
-        { nombre: "IntelliJ", logo: "icon-intellij" },
-        { nombre: "Office", logo: "icon-office" },
-        { nombre: "Jira", logo: "icon-jira" },
-        { nombre: "Trello", logo: "icon-trello" },
+        { nombre: "Linux", logo: "icon-linux" },
+        { nombre: "Ubuntu", logo: "icon-ubuntu" },
+        { nombre: "Windows Server", logo: "icon-server-windows" },
+        { nombre: "Windows", logo: "icon-windows-11" },
+        { nombre: "MacOS", logo: "icon-mac-os" },
+      ],
+    },
+    {
+      titulo: "📊 SAP (básico)",
+      tecnologias: [{ nombre: "SAP Fiori / SAP BTP", logo: "icon-sap" }],
+    },
+    {
+      titulo: "🛠️ Herramientas y Diseño",
+      tecnologias: [
         { nombre: "Figma", logo: "icon-figma" },
-        { nombre: "Vite", logo: "icon-vite" },
+        { nombre: "Adobe Illustrator", logo: "icon-adobe-illustrator" },
+        { nombre: "Adobe Photoshop", logo: "icon-adobe-photoshop" },
+        { nombre: "IntelliJ IDEA", logo: "icon-intellij-idea" },
+        { nombre: "VS Code", logo: "icon-visual-studio-code-2019" },
+        { nombre: "Visual Studio", logo: "icon-visual-studio" },
+        { nombre: "Office 365", logo: "icon-office-365" },
+        { nombre: "Jira", logo: "icon-jira" },
+        {
+          nombre: "Trello",
+          logo: "icon-external-trello-a-web-based-list-making-application-for-multi-platform-logo-color-tal-revivo",
+        },
       ],
     },
   ];
@@ -194,9 +200,8 @@ function Categoria({ categoria, darkMode, delay }) {
 
   const scroll = (direction) => {
     const el = containerRef.current;
-    const amount = 300;
     el.scrollBy({
-      left: direction === "left" ? -amount : amount,
+      left: direction === "left" ? -300 : 300,
       behavior: "smooth",
     });
   };
@@ -250,7 +255,9 @@ function Categoria({ categoria, darkMode, delay }) {
               <svg className="w-9 h-9 mb-1" aria-hidden="true">
                 <use href={`/portfolio.min.svg#${tech.logo}`} />
               </svg>
-              <span className="text-xs font-medium">{tech.nombre}</span>
+              <span className="text-xs font-medium text-center">
+                {tech.nombre}
+              </span>
             </div>
           ))}
         </div>
