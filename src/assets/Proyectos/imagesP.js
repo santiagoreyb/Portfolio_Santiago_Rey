@@ -61,6 +61,7 @@ import system1 from "./SistemaSolar/system1.png";
 import system2 from "./SistemaSolar/system2.png";
 import system3 from "./SistemaSolar/system3.png";
 import system4 from "./SistemaSolar/system4.png";
+
 //FastEvent
 import faste1 from "./FastEvent/fast1.png";
 import faste2 from "./FastEvent/fast2.png";
@@ -68,6 +69,7 @@ import faste3 from "./FastEvent/fast3.png";
 import faste4 from "./FastEvent/fast4.png";
 import faste5 from "./FastEvent/fast5.png";
 import faste6 from "./FastEvent/fast6.png";
+
 //FastU
 import fastu1 from "./FastU/fastu1.png";
 import fastu2 from "./FastU/fastu2.png";
