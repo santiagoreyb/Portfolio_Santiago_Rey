@@ -5,9 +5,9 @@ import neoncat1 from "./NeonCat/neoncat1.png";
 import neoncat2 from "./NeonCat/neoncat2.png";
 
 // EcoGuardians
-import eco1 from "./EcoGuardians/eco1.png";
-import eco2 from "./EcoGuardians/eco2.png";
-import eco3 from "./EcoGuardians/eco3.png";
+import eco1 from "./EcoGuardians/Eco1.png";
+import eco2 from "./EcoGuardians/Eco2.png";
+import eco3 from "./EcoGuardians/Eco3.png";
 
 
 // WhereIsIt
