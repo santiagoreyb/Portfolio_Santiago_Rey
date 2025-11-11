@@ -4,59 +4,72 @@ import excelencia from "../assets/certificados/excelencia.pdf";
 import hackathon from "../assets/certificados/hackathon.pdf";
 import olimpiadas from "../assets/certificados/olimpiadas.pdf";
 import excelencia11 from "../assets/certificados/excelencia11.pdf";
-function Reconocimientos({ darkMode }) {
+
+function Reconocimientos({ darkMode, lang = "es" }) {
   const [isOpen, setIsOpen] = useState(true);
 
   const reconocimientos = [
     {
-      titulo: "🎓 Mención de Honor por proyecto de grado destacado",
-      entidad: "Pontificia Universidad Javeriana",
+      titulo: {
+        es: "🎓 Mención de Honor por proyecto de grado destacado",
+        en: "🎓 Honor Mention for Outstanding Graduation Project",
+      },
+      entidad: { es: "Pontificia Universidad Javeriana", en: "Pontificia Universidad Javeriana" },
       fecha: "Mar 2025",
-      descripcion:
-        "Reconocimiento otorgado por alcanzar una altísima calidad académica en mi trabajo de grado, de acuerdo con lo establecido en el Numeral 99 del Reglamento de Estudiantes.",
-      insignia:
-        "https://wallet.xertify.co/certificates/FB4B8666A003?r=1",
+      descripcion: {
+        es: "Reconocimiento otorgado por alcanzar una altísima calidad académica en mi trabajo de grado, de acuerdo con lo establecido en el Numeral 99 del Reglamento de Estudiantes.",
+        en: "Recognition awarded for achieving outstanding academic quality in my graduation project, according to Numeral 99 of the Student Regulations.",
+      },
+      insignia: "https://wallet.xertify.co/certificates/FB4B8666A003?r=1",
     },
     {
-      titulo: "🏅 Reconocimientos a la excelencia académica",
-      entidad: "Pontificia Universidad Javeriana",
+      titulo: { es: "🏅 Reconocimientos a la excelencia académica", en: "🏅 Academic Excellence Awards" },
+      entidad: { es: "Pontificia Universidad Javeriana", en: "Pontificia Universidad Javeriana" },
       fecha: "2021 - 2024",
-      descripcion:
-        "Otorgado la 'Constancia de Excelencia Académica' durante toda mi carrera de pregrado, un reconocimiento concedido semestralmente a los estudiantes con un promedio ponderado acumulado superior al límite establecido por el Vicerrector Académico, a propuesta del Consejo de la Facultad.",
+      descripcion: {
+        es: "Otorgado la 'Constancia de Excelencia Académica' durante toda mi carrera de pregrado, un reconocimiento concedido semestralmente a los estudiantes con un promedio ponderado acumulado superior al límite establecido por el Vicerrector Académico.",
+        en: "Awarded the 'Academic Excellence Certificate' throughout my undergraduate career, given semesterly to students with a cumulative GPA above the limit set by the Academic Vice-Rector.",
+      },
       insignia: excelencia,
     },
     {
-      titulo: "🥈 Segundo puesto Hackathon Ciber Pro Challenge",
-      entidad: "Pontificia Universidad Javeriana",
+      titulo: { es: "🥈 Segundo puesto Hackathon Ciber Pro Challenge", en: "🥈 Second Place Hackathon Ciber Pro Challenge" },
+      entidad: { es: "Pontificia Universidad Javeriana", en: "Pontificia Universidad Javeriana" },
       fecha: "May 2021",
-      descripcion:
-        "Reconocimiento otorgado por la Facultad de Ingeniería por mi participación en la Hackathon Ciber Pro Challenge 2021, formando parte del equipo Fsociety, con el cual obtuvimos el segundo puesto. Este evento se llevó a cabo durante 36 horas, del 23 al 25 de abril de 2021, destacando mi compromiso, entrega y dedicación.",
+      descripcion: {
+        es: "Reconocimiento otorgado por la Facultad de Ingeniería por mi participación en la Hackathon Ciber Pro Challenge 2021...",
+        en: "Recognition awarded by the Faculty of Engineering for my participation in the Hackathon Ciber Pro Challenge 2021...",
+      },
       insignia: hackathon,
     },
     {
-      titulo: "🎖️ Beneficiario de la Beca Ingresa a la Javeriana",
-      entidad: "Pontificia Universidad Javeriana",
+      titulo: { es: "🎖️ Beneficiario de la Beca Ingresa a la Javeriana", en: "🎖️ Beneficiary of the Ingresa Scholarship at Javeriana" },
+      entidad: { es: "Pontificia Universidad Javeriana", en: "Pontificia Universidad Javeriana" },
       fecha: "2021",
-      descripcion:
-        "Fui beneficiario de la Beca Ingresa otorgada por la Pontificia Universidad Javeriana, un reconocimiento que premia la excelencia académica y apoya a estudiantes con dificultades económicas. Recibí este beneficio gracias a mi desempeño académico, compromiso con el aprendizaje y determinación para superar obstáculos.",
+      descripcion: {
+        es: "Fui beneficiario de la Beca Ingresa otorgada por la Pontificia Universidad Javeriana...",
+        en: "I was the beneficiary of the Ingresa Scholarship awarded by Pontificia Universidad Javeriana...",
+      },
       insignia: "",
     },
     {
-      titulo:
-        "🏆 Primer Lugar en la Prueba Clasificatoria de Olimpiadas Colombianas de Matemáticas 2020 (Nivel Superior)",
-      entidad: "Universidad Antonio Nariño",
+      titulo: { es: "🏆 Primer Lugar en Olimpiadas Colombianas de Matemáticas 2020", en: "🏆 First Place in Colombian Mathematics Olympiad 2020" },
+      entidad: { es: "Universidad Antonio Nariño", en: "Universidad Antonio Nariño" },
       fecha: "Mar 2020",
-      descripcion:
-        "Primer puesto en la prueba clasificatoria nacional de las Olimpiadas Colombianas de Matemáticas 2020, demostrando habilidades analíticas y pensamiento lógico en nivel superior.",
+      descripcion: {
+        es: "Primer puesto en la prueba clasificatoria nacional de las Olimpiadas Colombianas de Matemáticas 2020...",
+        en: "First place in the national qualifying test of the Colombian Mathematics Olympiad 2020...",
+      },
       insignia: olimpiadas,
     },
     {
-      titulo:
-        "🎓 Reconocimiento a la Excelencia Académica en Grado 11",
-      entidad: "Colegio Colsubsidio",
+      titulo: { es: "🎓 Reconocimiento a la Excelencia Académica en Grado 11", en: "🎓 Academic Excellence Recognition in 11th Grade" },
+      entidad: { es: "Colegio Colsubsidio", en: "Colegio Colsubsidio" },
       fecha: "Dic 2020",
-      descripcion:
-        "Otorgado por la vivencia del perfil del estudiante y mis altos resultados académicos durante la educación media, reflejando liderazgo, compromiso y excelencia integral.",
+      descripcion: {
+        es: "Otorgado por la vivencia del perfil del estudiante y mis altos resultados académicos durante la educación media...",
+        en: "Awarded for living the student profile and achieving high academic results during high school...",
+      },
       insignia: excelencia11,
     },
   ];
@@ -70,7 +83,7 @@ function Reconocimientos({ darkMode }) {
       {/* Encabezado */}
       <div className="relative mb-6">
         <h2 className="text-3xl md:text-4xl font-bold tracking-wide text-center">
-          🏅 Honors & Awards
+          {lang === "es" ? "🏅 Reconocimientos" : "🏅 Honors & Awards"}
         </h2>
 
         {/* Botón + / − */}
@@ -78,7 +91,7 @@ function Reconocimientos({ darkMode }) {
           onClick={() => setIsOpen((s) => !s)}
           aria-expanded={isOpen}
           className="absolute right-2 top-0 text-3xl md:text-4xl font-bold hover:bg-white/5 transition"
-          title={isOpen ? "Cerrar sección" : "Abrir sección"}
+          title={isOpen ? (lang === "es" ? "Cerrar sección" : "Close section") : (lang === "es" ? "Abrir sección" : "Open section")}
         >
           {isOpen ? "−" : "+"}
         </button>
@@ -117,14 +130,14 @@ function Reconocimientos({ darkMode }) {
                       darkMode ? "text-cyan-300" : "text-[#0369A1]"
                     }`}
                   >
-                    {rec.titulo}
+                    {rec.titulo[lang]}
                   </h3>
                   <p
                     className={`text-sm ${
                       darkMode ? "text-[#C4D7E9]" : "text-[#334155]"
                     }`}
                   >
-                    {rec.entidad} · {rec.fecha}
+                    {rec.entidad[lang]} · {rec.fecha}
                   </p>
                 </div>
 
@@ -139,7 +152,7 @@ function Reconocimientos({ darkMode }) {
                         : "bg-cyan-100 border-cyan-300 text-cyan-700 hover:bg-cyan-200"
                     }`}
                   >
-                    🎖️ Ver certificado
+                    🎖️ {lang === "es" ? "Ver certificado" : "View Certificate"}
                   </a>
                 )}
               </div>
@@ -149,7 +162,7 @@ function Reconocimientos({ darkMode }) {
                   darkMode ? "text-[#C4D7E9]" : "text-[#334155]"
                 }`}
               >
-                {rec.descripcion}
+                {rec.descripcion[lang]}
               </p>
             </motion.div>
           ))}
