@@ -45,7 +45,7 @@ import agua1 from "./MedicionAgua/Agua1.png";
 import agua2 from "./MedicionAgua/Agua2.png";
 
 // Portafolio / placeholder
-import portafolio from "./Portafolio/portafolio1.png";
+import portafolio from "./Portafolio/porta1.png";
 
 // Kakkuro
 import kakkuro1 from "./Kakkuro/kakkuro1.jpeg";
