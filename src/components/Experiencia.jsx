@@ -1,24 +1,54 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import colpensiones from "../assets/pictures/colpensiones.png";
-import placeholder from "../assets/pictures/colpensiones.png"; // 🔹 Logo genérico
+import freelance from "../assets/pictures/freelance.png"; // 🔹 Logo genérico
 
-function Experiencia({ darkMode }) {
+function Experiencia({ darkMode, lang}) {
   const [isOpen, setIsOpen] = useState(true);
 
+  // Traducciones de texto fijo
+  const titles = {
+    es: {
+      experience: "💼 Experiencia",
+      close: "Cerrar sección",
+      open: "Abrir sección",
+    },
+    en: {
+      experience: "💼 Experience",
+      close: "Close section",
+      open: "Open section",
+    },
+  };
+
+  // Contenido bilingüe
   const experiences = [
     {
       company: "Colpensiones",
-      role: "Desarrollador Full Stack e Ingeniero de Automatización",
-      date: "Bogotá, Colombia · Feb 2025 – Presente",
+      role: {
+        es: "Desarrollador Full Stack e Ingeniero de Automatización",
+        en: "Full Stack Developer and Automation Engineer",
+      },
+      date: {
+        es: "Bogotá, Colombia · Feb 2025 – Presente",
+        en: "Bogotá, Colombia · Feb 2025 – Present",
+      },
       logo: colpensiones,
-      description: [
-        "Optimizé la eficiencia tecnológica interna desarrollando y manteniendo aplicaciones con .NET (C#), Angular, TypeScript y SQL Server/Sybase, reduciendo los tiempos de proceso en un 30%.",
-        "Diseñé e implementé APIs REST seguras y escalables, fortaleciendo la comunicación entre sistemas y mejorando la interoperabilidad entre las plataformas digitales institucionales.",
-        "Mejoré la calidad del software integrando pruebas unitarias y de integración automatizadas, disminuyendo los errores en producción en un 25%.",
-        "Fomenté prácticas ágiles participando activamente en Scrum, logrando ciclos de entrega más cortos y una mejor alineación con los objetivos del negocio.",
-        "Apoyé el despliegue exitoso de soluciones en la nube, documentando los procesos técnicos y garantizando la estabilidad en los entornos productivos.",
-      ],
+      description: {
+        es: [
+          "Optimizé la eficiencia tecnológica interna desarrollando y manteniendo aplicaciones con .NET (C#), Angular, TypeScript y SQL Server/Sybase, reduciendo los tiempos de proceso en un 30%.",
+          "Diseñé e implementé APIs REST seguras y escalables, fortaleciendo la comunicación entre sistemas y mejorando la interoperabilidad entre las plataformas digitales institucionales.",
+          "Mejoré la calidad del software integrando pruebas unitarias y de integración automatizadas, disminuyendo los errores en producción en un 25%.",
+          "Fomenté prácticas ágiles participando activamente en Scrum, logrando ciclos de entrega más cortos y una mejor alineación con los objetivos del negocio.",
+          "Apoyé el despliegue exitoso de soluciones en la nube, documentando los procesos técnicos y garantizando la estabilidad en los entornos productivos.",
+        ],
+        en: [
+          "Optimized internal technological efficiency by developing and maintaining applications using .NET (C#), Angular, TypeScript, and SQL Server/Sybase, reducing processing times by 30%.",
+          "Designed and implemented secure, scalable REST APIs, strengthening system communication and improving interoperability across institutional digital platforms.",
+          "Enhanced software quality by integrating automated unit and integration tests, reducing production errors by 25%.",
+          "Promoted agile practices by actively participating in Scrum, achieving shorter delivery cycles and better alignment with business goals.",
+          "Supported successful cloud solution deployments, documenting technical processes and ensuring stability in production environments.",
+        ],
+      },
       logos: [
         "icon-angularjs",
         "icon-typescript",
@@ -31,14 +61,27 @@ function Experiencia({ darkMode }) {
     },
     {
       company: "AWAQ Organization",
-      role: "Desarrollador y Scrum Master",
-      date: "Bogotá, Colombia · Feb 2024 – Nov 2024",
+      role: {
+        es: "Desarrollador y Scrum Master",
+        en: "Developer and Scrum Master",
+      },
+      date: {
+        es: "Bogotá, Colombia · Feb 2024 – Nov 2024",
+        en: "Bogotá, Colombia · Feb 2024 – Nov 2024",
+      },
       logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8KDK0j2hil__W4A_3wg4HPedq-PqBuiLB3w&s",
-      description: [
-        "Lideré el desarrollo del videojuego educativo 3D 'EcoGuardians' utilizando Unity (C#), lo que aumentó la interacción de los usuarios y promovió la conciencia ambiental entre jóvenes.",
-        "Optimicé el rendimiento del juego y la experiencia del usuario, mejorando los tiempos de carga y la fluidez multiplataforma.",
-        "Dirigí un equipo multidisciplinario bajo la metodología Scrum, cumpliendo el 100% de los objetivos de cada sprint y consolidando una cultura de colaboración técnica.",
-      ],
+      description: {
+        es: [
+          "Lideré el desarrollo del videojuego educativo 3D 'EcoGuardians' utilizando Unity (C#), lo que aumentó la interacción de los usuarios y promovió la conciencia ambiental entre jóvenes.",
+          "Optimicé el rendimiento del juego y la experiencia del usuario, mejorando los tiempos de carga y la fluidez multiplataforma.",
+          "Dirigí un equipo multidisciplinario bajo la metodología Scrum, cumpliendo el 100% de los objetivos de cada sprint y consolidando una cultura de colaboración técnica.",
+        ],
+        en: [
+          "Led the development of the 3D educational video game 'EcoGuardians' using Unity (C#), increasing user engagement and promoting environmental awareness among youth.",
+          "Optimized game performance and user experience by improving loading times and cross-platform smoothness.",
+          "Managed a multidisciplinary team under the Scrum methodology, meeting 100% of sprint objectives and fostering a strong culture of technical collaboration.",
+        ],
+      },
       logos: [
         "icon-unity",
         "icon-net-framework",
@@ -48,21 +91,34 @@ function Experiencia({ darkMode }) {
         "icon-javascript",
         "icon-adobe-illustrator",
         "icon-adobe-photoshop"
-
       ],
       technologies: ["Unity", ".NET", "C#", "Blender", "React", "JavaScript", "Adobe Illustrator", "Adobe Photoshop"],
     },
     {
       company: "Freelance",
-      role: "Desarrollador Full Stack Independiente",
-      date: "Bogotá, Colombia · Ene 2023 – Dic 2023",
-      logo: placeholder,
-      description: [
-        "Desarrollé soluciones personalizadas para clientes en los sectores educativo y tecnológico, utilizando .NET, Java, Python, C++ y JavaScript, garantizando aplicaciones funcionales, seguras y escalables.",
-        "Implementé arquitecturas modulares y APIs REST, mejorando la integración entre sistemas y la eficiencia en el mantenimiento de proyectos.",
-        "Optimizé interfaces y flujos de usuario aplicando principios de UX/UI y diseño responsivo, incrementando la satisfacción de los usuarios finales.",
-        "Gestioné proyectos bajo metodologías ágiles, asegurando entregas a tiempo y comunicación efectiva con los clientes.",
-      ],
+      role: {
+        es: "Desarrollador Full Stack Independiente",
+        en: "Independent Full Stack Developer",
+      },
+      date: {
+        es: "Bogotá, Colombia · Ene 2023 – Dic 2023",
+        en: "Bogotá, Colombia · Jan 2023 – Dec 2023",
+      },
+      logo: freelance,
+      description: {
+        es: [
+          "Desarrollé soluciones personalizadas para clientes en los sectores educativo y tecnológico, utilizando .NET, Java, Python, C++ y JavaScript, garantizando aplicaciones funcionales, seguras y escalables.",
+          "Implementé arquitecturas modulares y APIs REST, mejorando la integración entre sistemas y la eficiencia en el mantenimiento de proyectos.",
+          "Optimizé interfaces y flujos de usuario aplicando principios de UX/UI y diseño responsivo, incrementando la satisfacción de los usuarios finales.",
+          "Gestioné proyectos bajo metodologías ágiles, asegurando entregas a tiempo y comunicación efectiva con los clientes.",
+        ],
+        en: [
+          "Developed customized solutions for clients in the educational and tech sectors using .NET, Java, Python, C++, and JavaScript, ensuring functional, secure, and scalable applications.",
+          "Implemented modular architectures and REST APIs, improving system integration and project maintenance efficiency.",
+          "Optimized interfaces and user flows using UX/UI principles and responsive design, increasing end-user satisfaction.",
+          "Managed projects under agile methodologies, ensuring timely deliveries and effective client communication.",
+        ],
+      },
       logos: [
         "icon-net-framework",
         "icon-java-coffee-cup-logo",
@@ -83,15 +139,14 @@ function Experiencia({ darkMode }) {
       {/* Encabezado */}
       <div className="relative mb-6">
         <h2 className="text-3xl md:text-4xl font-bold tracking-wide text-center" aria-hidden>
-          💼 Experiencia
+          {titles[lang].experience}
         </h2>
 
-        {/* Botón de toggle */}
         <button
           onClick={() => setIsOpen((s) => !s)}
           aria-expanded={isOpen}
           className="absolute right-2 top-0 text-3xl md:text-4xl font-bold hover:bg-white/5 transition"
-          title={isOpen ? "Cerrar sección" : "Abrir sección"}
+          title={isOpen ? titles[lang].close : titles[lang].open}
         >
           {isOpen ? "−" : "+"}
         </button>
@@ -134,7 +189,6 @@ function Experiencia({ darkMode }) {
                       : "bg-[#DCE3F2] border-[#b6c2d9] hover:border-[#8ca3c6]"
                   }`}
                 >
-                  {/* Encabezado */}
                   <div className="flex items-center gap-4 mb-4">
                     <img
                       src={exp.logo}
@@ -147,7 +201,7 @@ function Experiencia({ darkMode }) {
                           darkMode ? "text-cyan-300" : "text-[#2B4162]"
                         }`}
                       >
-                        {exp.role}
+                        {exp.role[lang]}
                       </h3>
                       <p
                         className={`text-sm ${
@@ -161,23 +215,21 @@ function Experiencia({ darkMode }) {
                           darkMode ? "text-[#C4D7E9]" : "text-[#516078]"
                         }`}
                       >
-                        {exp.date}
+                        {exp.date[lang]}
                       </p>
                     </div>
                   </div>
 
-                  {/* Descripción */}
                   <ul
                     className={`list-disc list-inside mb-4 leading-relaxed space-y-2 ml-1 ${
                       darkMode ? "text-[#C4D7E9]" : "text-[#2b3a50]"
                     }`}
                   >
-                    {exp.description.map((item, i) => (
+                    {exp.description[lang].map((item, i) => (
                       <li key={i}>{item}</li>
                     ))}
                   </ul>
 
-                  {/* Tecnologías */}
                   <div className="flex flex-wrap gap-2">
                     {exp.technologies.map((tech, i) => (
                       <span

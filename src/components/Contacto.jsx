@@ -1,7 +1,7 @@
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
 
-function Contacto({ darkMode }) {
+function Contacto({ darkMode, lang }) {
   const [isOpen, setIsOpen] = useState(true);
   const [form, setForm] = useState({
     name: "",
@@ -36,6 +36,40 @@ function Contacto({ darkMode }) {
       });
   };
 
+  // 🗣️ Textos multilenguaje
+  const text = {
+    es: {
+      title: "📬 Contáctame",
+      toggleOpen: "Cerrar sección",
+      toggleClose: "Abrir sección",
+      intro:
+        "Si deseas colaborar, tienes alguna pregunta o solo quieres saludar, ¡escríbeme un mensaje!",
+      name: "Nombre",
+      email: "Tu email o forma en la que quieres ser contactado",
+      message: "Mensaje",
+      send: "Enviar mensaje",
+      sending: "Enviando...",
+      success: "✅ Enviado correctamente",
+      error: "❌ Error al enviar",
+    },
+    en: {
+      title: "📬 Contact Me",
+      toggleOpen: "Close section",
+      toggleClose: "Open section",
+      intro:
+        "If you’d like to collaborate, have any questions, or just want to say hi, send me a message!",
+      name: "Name",
+      email: "Your email or preferred way to be contacted",
+      message: "Message",
+      send: "Send message",
+      sending: "Sending...",
+      success: "✅ Sent successfully",
+      error: "❌ Error sending message",
+    },
+  };
+
+  const t = text[lang] || text.es;
+
   return (
     <div
       className={`w-[90%] max-w-6xl mx-auto pt-8 transition-all duration-300 ${
@@ -45,7 +79,7 @@ function Contacto({ darkMode }) {
       {/* Encabezado */}
       <div className="relative mb-6">
         <h2 className="text-3xl md:text-4xl font-bold tracking-wide text-center">
-          📬 Contáctame
+          {t.title}
         </h2>
 
         {/* Botón + / − */}
@@ -53,7 +87,7 @@ function Contacto({ darkMode }) {
           onClick={() => setIsOpen((s) => !s)}
           aria-expanded={isOpen}
           className="absolute right-2 top-0 text-3xl md:text-4xl font-bold hover:bg-white/5 transition"
-          title={isOpen ? "Cerrar sección" : "Abrir sección"}
+          title={isOpen ? t.toggleOpen : t.toggleClose}
         >
           {isOpen ? "−" : "+"}
         </button>
@@ -85,13 +119,12 @@ function Contacto({ darkMode }) {
               darkMode ? "text-cyan-100/90" : "text-gray-700"
             }`}
           >
-            Si deseas colaborar, tienes alguna pregunta o solo quieres saludar,
-            ¡escríbeme un mensaje!
+            {t.intro}
           </p>
 
           <form onSubmit={handleSubmit} className="flex flex-col gap-5">
             <label className="flex flex-col">
-              <span className="font-semibold mb-1">Nombre</span>
+              <span className="font-semibold mb-1">{t.name}</span>
               <input
                 type="text"
                 name="name"
@@ -107,9 +140,7 @@ function Contacto({ darkMode }) {
             </label>
 
             <label className="flex flex-col">
-              <span className="font-semibold mb-1">
-                Tu email o forma en la que quieres ser contactado
-              </span>
+              <span className="font-semibold mb-1">{t.email}</span>
               <input
                 type="email"
                 name="email"
@@ -125,7 +156,7 @@ function Contacto({ darkMode }) {
             </label>
 
             <label className="flex flex-col">
-              <span className="font-semibold mb-1">Mensaje</span>
+              <span className="font-semibold mb-1">{t.message}</span>
               <textarea
                 name="message"
                 rows="5"
@@ -150,12 +181,12 @@ function Contacto({ darkMode }) {
               }`}
             >
               {status === "sending"
-                ? "Enviando..."
+                ? t.sending
                 : status === "success"
-                ? "✅ Enviado correctamente"
+                ? t.success
                 : status === "error"
-                ? "❌ Error al enviar"
-                : "Enviar mensaje"}
+                ? t.error
+                : t.send}
             </button>
           </form>
         </div>

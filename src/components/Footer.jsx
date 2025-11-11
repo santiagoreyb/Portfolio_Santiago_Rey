@@ -1,7 +1,26 @@
 import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin, FaFileAlt } from "react-icons/fa";
-import cv from "../assets/CV/Hoja de Vida - Santiago Camilo Rey Benavides.pdf";
-function Footer({ darkMode }) {
+
+// 📄 Importa ambos CV según el idioma
+import cvES from "../assets/CV/Hoja de Vida - Santiago Camilo Rey Benavides.pdf";
+import cvEN from "../assets/CV/Resume - Santiago Camilo Rey Benavides.pdf";
+
+function Footer({ darkMode, lang }) {
+  // 🌍 Selecciona el CV correcto
+  const cv = lang === "en" ? cvEN : cvES;
+
+  // 📜 Textos dinámicos según idioma
+  const text = {
+    es: {
+      rights: "Todos los derechos reservados.",
+      titleCV: "Ver CV",
+    },
+    en: {
+      rights: "All rights reserved.",
+      titleCV: "View Resume",
+    },
+  };
+
   return (
     <footer
       className={`w-full py-8 mt-16 border-t backdrop-blur-md transition-colors duration-500 ${
@@ -19,7 +38,8 @@ function Footer({ darkMode }) {
       >
         {/* Texto o nombre */}
         <p className="text-sm md:text-base font-medium">
-          © {new Date().getFullYear()} Santiago Rey — Todos los derechos reservados.
+          © {new Date().getFullYear()} Santiago Rey —{" "}
+          {lang === "en" ? text.en.rights : text.es.rights}
         </p>
 
         {/* Iconos sociales */}
@@ -53,12 +73,11 @@ function Footer({ darkMode }) {
           {/* CV */}
           <a
             href={cv}
-            target="_blank"
-            rel="noopener noreferrer"
+            download={lang === "en" ? "Resume - Santiago Rey.pdf" : "Hoja de Vida - Santiago Rey.pdf"}
             className={`transition-transform hover:scale-110 ${
               darkMode ? "hover:text-cyan-400" : "hover:text-[#3b6ea5]"
             }`}
-            title="Ver CV"
+            title={lang === "en" ? text.en.titleCV : text.es.titleCV}
           >
             <FaFileAlt />
           </a>

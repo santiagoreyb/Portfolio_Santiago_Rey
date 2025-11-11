@@ -1,12 +1,50 @@
 import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 
-function Habilidades({ darkMode }) {
+function Habilidades({ darkMode, lang}) {
   const [isOpen, setIsOpen] = useState(true);
+
+  // Traducciones de textos
+  const textos = {
+    es: {
+      tituloGeneral: "🧠 Habilidades Técnicas",
+      cerrar: "Cerrar sección",
+      abrir: "Abrir sección",
+      categorias: {
+        frontend: "💻 Frontend",
+        backend: "⚙️ Backend",
+        ia: "🤖 Inteligencia Artificial",
+        cloud: "☁️ Cloud y DevOps",
+        db: "🗄️ Bases de Datos",
+        mobile: "📱 Desarrollo Móvil",
+        so: "🖥️ Sistemas Operativos",
+        sap: "📊 SAP (básico)",
+        tools: "🛠️ Herramientas y Diseño",
+      },
+    },
+    en: {
+      tituloGeneral: "🧠 Technical Skills",
+      cerrar: "Close section",
+      abrir: "Open section",
+      categorias: {
+        frontend: "💻 Frontend",
+        backend: "⚙️ Backend",
+        ia: "🤖 Artificial Intelligence",
+        cloud: "☁️ Cloud and DevOps",
+        db: "🗄️ Databases",
+        mobile: "📱 Mobile Development",
+        so: "🖥️ Operating Systems",
+        sap: "📊 SAP (basic)",
+        tools: "🛠️ Tools and Design",
+      },
+    },
+  };
+
+  const t = textos[lang];
 
   const categorias = [
     {
-      titulo: "💻 Frontend",
+      titulo: t.categorias.frontend,
       tecnologias: [
         { nombre: "React", logo: "icon-react" },
         { nombre: "Angular", logo: "icon-angularjs" },
@@ -20,7 +58,7 @@ function Habilidades({ darkMode }) {
       ],
     },
     {
-      titulo: "⚙️ Backend",
+      titulo: t.categorias.backend,
       tecnologias: [
         { nombre: "C#", logo: "icon-c-sharp-logo" },
         { nombre: ".NET", logo: "icon-net-framework" },
@@ -28,25 +66,22 @@ function Habilidades({ darkMode }) {
         { nombre: "Python", logo: "icon-python" },
         { nombre: "C++", logo: "icon-c-plus-plus-logo" },
         { nombre: "C", logo: "icon-c-programming" },
-        {
-          nombre: "Apache",
-          logo: "icon-external-apache-a-free-and-open-source-cross-platform-web-server-software-logo-shadow-tal-revivo",
-        },
+        { nombre: "Apache", logo: "icon-external-apache-a-free-and-open-source-cross-platform-web-server-software-logo-shadow-tal-revivo" },
       ],
     },
     {
-      titulo: "🤖 Inteligencia Artificial",
+      titulo: t.categorias.ia,
       tecnologias: [
         { nombre: "TensorFlow", logo: "icon-tensorflow" },
         { nombre: "PyTorch", logo: "icon-pytorch" },
         { nombre: "Keras", logo: "icon-keras" },
         { nombre: "Pandas", logo: "icon-pandas" },
         { nombre: "NumPy", logo: "icon-numpy" },
-        { nombre: "IA Generativa", logo: "icon-ai-generated-code" }, // nuevo ID
+        { nombre: lang === "es" ? "IA Generativa" : "Generative AI", logo: "icon-ai-generated-code" },
       ],
     },
     {
-      titulo: "☁️ Cloud y DevOps",
+      titulo: t.categorias.cloud,
       tecnologias: [
         { nombre: "Google Cloud", logo: "icon-google-cloud" },
         { nombre: "Microsoft Azure", logo: "icon-azure-1" },
@@ -59,24 +94,18 @@ function Habilidades({ darkMode }) {
       ],
     },
     {
-      titulo: "🗄️ Bases de Datos",
+      titulo: t.categorias.db,
       tecnologias: [
         { nombre: "PostgreSQL", logo: "icon-postgreesql" },
-        {
-          nombre: "MySQL",
-          logo: "icon-external-mysql-an-open-source-relational-database-management-system-logo-color-tal-revivo",
-        },
-        {
-          nombre: "MongoDB",
-          logo: "icon-external-mongodb-a-cross-platform-document-oriented-database-program-logo-color-tal-revivo",
-        },
+        { nombre: "MySQL", logo: "icon-external-mysql-an-open-source-relational-database-management-system-logo-color-tal-revivo" },
+        { nombre: "MongoDB", logo: "icon-external-mongodb-a-cross-platform-document-oriented-database-program-logo-color-tal-revivo" },
         { nombre: "SQL Server", logo: "icon-microsoft-sql-server" },
-        { nombre: "Oracle", logo: "icon-oracle-pl-sql" }, // Oracle en DBs
+        { nombre: "Oracle", logo: "icon-oracle-pl-sql" },
         { nombre: "Firebase DB", logo: "icon-firebase" },
       ],
     },
     {
-      titulo: "📱 Desarrollo Móvil",
+      titulo: t.categorias.mobile,
       tecnologias: [
         { nombre: "Android", logo: "icon-android-os" },
         { nombre: "Kotlin", logo: "icon-kotlin" },
@@ -87,7 +116,7 @@ function Habilidades({ darkMode }) {
       ],
     },
     {
-      titulo: "🖥️ Sistemas Operativos",
+      titulo: t.categorias.so,
       tecnologias: [
         { nombre: "Linux", logo: "icon-linux" },
         { nombre: "Ubuntu", logo: "icon-ubuntu" },
@@ -97,11 +126,11 @@ function Habilidades({ darkMode }) {
       ],
     },
     {
-      titulo: "📊 SAP (básico)",
+      titulo: t.categorias.sap,
       tecnologias: [{ nombre: "SAP Fiori / SAP BTP", logo: "icon-sap" }],
     },
     {
-      titulo: "🛠️ Herramientas y Diseño",
+      titulo: t.categorias.tools,
       tecnologias: [
         { nombre: "Figma", logo: "icon-figma" },
         { nombre: "Adobe Illustrator", logo: "icon-adobe-illustrator" },
@@ -111,10 +140,7 @@ function Habilidades({ darkMode }) {
         { nombre: "Visual Studio", logo: "icon-visual-studio" },
         { nombre: "Office 365", logo: "icon-office-365" },
         { nombre: "Jira", logo: "icon-jira" },
-        {
-          nombre: "Trello",
-          logo: "icon-external-trello-a-web-based-list-making-application-for-multi-platform-logo-color-tal-revivo",
-        },
+        { nombre: "Trello", logo: "icon-external-trello-a-web-based-list-making-application-for-multi-platform-logo-color-tal-revivo" },
         { nombre: "Vercel", logo: "icon-vercel" },
       ],
     },
@@ -132,7 +158,7 @@ function Habilidades({ darkMode }) {
             darkMode ? "text-white" : "text-gray-800"
           }`}
         >
-          🧠 Habilidades Técnicas
+          {t.tituloGeneral}
         </h2>
 
         <button
@@ -143,7 +169,7 @@ function Habilidades({ darkMode }) {
               ? "text-white hover:bg-white/10"
               : "text-gray-700 hover:bg-gray-300/50"
           } transition px-2 rounded-md`}
-          title={isOpen ? "Cerrar sección" : "Abrir sección"}
+          title={isOpen ? t.cerrar : t.abrir}
         >
           {isOpen ? "−" : "+"}
         </button>

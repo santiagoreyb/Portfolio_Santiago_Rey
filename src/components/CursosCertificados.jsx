@@ -12,35 +12,79 @@ import redhatpdf from "../assets/certificados/redhat.pdf";
 import pilotopdf from "../assets/certificados/piloto.pdf";
 import senapdf from "../assets/certificados/sena.pdf";
 
-function CursosCertificados({ darkMode }) {
+function CursosCertificados({ darkMode, lang = "es" }) {
   const [isOpen, setIsOpen] = useState(true);
 
+  const textos = {
+    es: {
+      titulo: "📜 Cursos & Certificados",
+      verInsignia: "🏅 Ver insignia",
+      areas: {
+        Desarrollo: "Desarrollo",
+        "Computación Cuántica": "Computación Cuántica",
+        Cloud: "Cloud",
+        "Metodologías Ágiles": "Metodologías Ágiles",
+        "Sistemas Operativos": "Sistemas Operativos",
+      },
+    },
+    en: {
+      titulo: "📜 Courses & Certifications",
+      verInsignia: "🏅 View Badge",
+      areas: {
+        Desarrollo: "Development",
+        "Computación Cuántica": "Quantum Computing",
+        Cloud: "Cloud",
+        "Metodologías Ágiles": "Agile Methodologies",
+        "Sistemas Operativos": "Operating Systems",
+      },
+    },
+  };
+
+  const t = textos[lang];
+
   const cursos = [
-    // Desarrollo
     {
       area: "Desarrollo",
-      role: "CET - TIC Desarrollo Web Front-End con HTML, CSS y JavaScript (React)",
+      role:
+        lang === "es"
+          ? "CET - TIC Desarrollo Web Front-End con HTML, CSS y JavaScript (React)"
+          : "CET - ICT Front-End Web Development with HTML, CSS, and JavaScript (React)",
       company: "Universidad de Los Andes",
-      date: "Oct 2025",
+      date: lang === "es" ? "Oct 2025" : "Oct 2025",
       logo: uniandes,
-      insights: [
-        "Desarrollo de interfaces web interactivas.",
-        "Manejo de componentes, hooks y estados en React.",
-      ],
+      insights:
+        lang === "es"
+          ? [
+              "Desarrollo de interfaces web interactivas.",
+              "Manejo de componentes, hooks y estados en React.",
+            ]
+          : [
+              "Development of interactive web interfaces.",
+              "Use of components, hooks, and state in React.",
+            ],
       insignia: "https://wallet.xertify.co/certificates/2A0EAF66A002",
       technologies: ["HTML5", "CSS", "JavaScript", "React"],
       logos: ["icon-html-5", "icon-css3", "icon-javascript", "icon-react"],
     },
     {
       area: "Desarrollo",
-      role: "Diplomado en Programación y Codificación",
+      role:
+        lang === "es"
+          ? "Diplomado en Programación y Codificación"
+          : "Programming and Coding Diploma",
       company: "Samsung Electronics Colombia",
       date: "Jun 2021",
       logo: samsung,
-      insights: [
-        "Fundamentos de programación en C y C++.",
-        "Diseño de soluciones interactivas con Arduino y Scratch.",
-      ],
+      insights:
+        lang === "es"
+          ? [
+              "Fundamentos de programación en C y C++.",
+              "Diseño de soluciones interactivas con Arduino y Scratch.",
+            ]
+          : [
+              "Programming fundamentals in C and C++.",
+              "Design of interactive solutions using Arduino and Scratch.",
+            ],
       insignia: "https://wallet.xertify.co/certificates/EFA11D1AA001?viewMode=regular",
       technologies: ["C++", "Arduino", "UX Design", "Problem Solving"],
       logos: [
@@ -52,14 +96,23 @@ function CursosCertificados({ darkMode }) {
     },
     {
       area: "Desarrollo",
-      role: "Análisis para el desarrollo móvil con App Inventor",
+      role:
+        lang === "es"
+          ? "Análisis para el desarrollo móvil con App Inventor"
+          : "Mobile Development Analysis with App Inventor",
       company: "SENA",
       date: "Sep 2020",
       logo: sena,
-      insights: [
-        "Desarrollo de aplicaciones móviles usando App Inventor.",
-        "Introducción al diseño visual de interfaces y lógica de bloques.",
-      ],
+      insights:
+        lang === "es"
+          ? [
+              "Desarrollo de aplicaciones móviles usando App Inventor.",
+              "Introducción al diseño visual de interfaces y lógica de bloques.",
+            ]
+          : [
+              "Development of mobile applications using App Inventor.",
+              "Introduction to interface design and block logic.",
+            ],
       insignia: senapdf,
       technologies: ["App Inventor", "Android", "UI Design"],
       logos: [
@@ -70,14 +123,23 @@ function CursosCertificados({ darkMode }) {
     },
     {
       area: "Desarrollo",
-      role: "IoT: Programación con Arduinos y Raspberry Pi",
+      role:
+        lang === "es"
+          ? "IoT: Programación con Arduinos y Raspberry Pi"
+          : "IoT: Programming with Arduinos and Raspberry Pi",
       company: "Universidad Piloto de Colombia",
       date: "Oct 2019",
       logo: piloto,
-      insights: [
-        "Desarrollo de proyectos IoT con Arduino y Raspberry Pi.",
-        "Integración de sensores y sistemas embebidos.",
-      ],
+      insights:
+        lang === "es"
+          ? [
+              "Desarrollo de proyectos IoT con Arduino y Raspberry Pi.",
+              "Integración de sensores y sistemas embebidos.",
+            ]
+          : [
+              "Development of IoT projects using Arduino and Raspberry Pi.",
+              "Integration of sensors and embedded systems.",
+            ],
       insignia: pilotopdf,
       technologies: ["Arduino", "Raspberry Pi", "IoT"],
       logos: [
@@ -86,17 +148,25 @@ function CursosCertificados({ darkMode }) {
         "icon-external-iot-fintech-becris-lineal-color-becris",
       ],
     },
-    // Cloud
     {
       area: "Cloud",
-      role: "Google Cloud Computing Foundations Certificate",
+      role:
+        lang === "es"
+          ? "Google Cloud Computing Foundations Certificate"
+          : "Google Cloud Computing Foundations Certificate",
       company: "Google",
       date: "Jul 2025",
       logo: google,
-      insights: [
-        "Fundamentos de Cloud Computing y servicios de GCP.",
-        "Implementación de soluciones en Cloud Run, Cloud Engine, Firestore, Dataflow, etc.",
-      ],
+      insights:
+        lang === "es"
+          ? [
+              "Fundamentos de Cloud Computing y servicios de GCP.",
+              "Implementación de soluciones en Cloud Run, Cloud Engine, Firestore, Dataflow, etc.",
+            ]
+          : [
+              "Cloud Computing fundamentals and GCP services.",
+              "Implementation of solutions using Cloud Run, Compute Engine, Firestore, Dataflow, etc.",
+            ],
       insignia:
         "https://www.credly.com/badges/56df403f-bc3f-4289-a7d9-88213affe407/linked_in_profile",
       technologies: ["GCP", "Cloud Run", "Compute Engine", "Firestore", "Storage"],
@@ -110,30 +180,46 @@ function CursosCertificados({ darkMode }) {
     },
     {
       area: "Cloud",
-      role: "Cloud Computing con Azure y AWS",
+      role:
+        lang === "es"
+          ? "Cloud Computing con Azure y AWS"
+          : "Cloud Computing with Azure and AWS",
       company: "Universidad de Los Andes",
       date: "Jul 2025",
       logo: uniandes,
-      insights: [
-        "Arquitectura y servicios de Azure y AWS.",
-        "Administración y gobernanza en Azure y AWS.",
-        "DevOps y automatización.",
-      ],
+      insights:
+        lang === "es"
+          ? [
+              "Arquitectura y servicios de Azure y AWS.",
+              "Administración y gobernanza en Azure y AWS.",
+              "DevOps y automatización.",
+            ]
+          : [
+              "Architecture and services in Azure and AWS.",
+              "Administration and governance in Azure and AWS.",
+              "DevOps and automation.",
+            ],
       insignia: "",
       technologies: ["Azure", "AWS"],
       logos: ["icon-azure-1", "icon-amazon-web-services"],
     },
-    // Metodologías
     {
       area: "Metodologías Ágiles",
-      role: "Agile Explorer",
+      role:
+        lang === "es" ? "Agile Explorer" : "Agile Explorer",
       company: "IBM",
       date: "Jun 2025",
       logo: ibm,
-      insights: [
-        "Gestión ágil con Scrum y Design Thinking.",
-        "Aplicación de metodologías ágiles en desarrollo de software.",
-      ],
+      insights:
+        lang === "es"
+          ? [
+              "Gestión ágil con Scrum y Design Thinking.",
+              "Aplicación de metodologías ágiles en desarrollo de software.",
+            ]
+          : [
+              "Agile management with Scrum and Design Thinking.",
+              "Application of agile methodologies in software development.",
+            ],
       insignia:
         "https://www.credly.com/badges/23152632-a3a0-4bf7-9002-f4dac255380c/linked_in_profile",
       technologies: ["Scrum", "Agile", "Project Management"],
@@ -143,35 +229,52 @@ function CursosCertificados({ darkMode }) {
         "icon-problem-solving",
       ],
     },
-    // Sistemas
     {
       area: "Sistemas Operativos",
-      role: "Red Hat System Administration I (RH124)",
+      role:
+        lang === "es"
+          ? "Red Hat System Administration I (RH124)"
+          : "Red Hat System Administration I (RH124)",
       company: "Red Hat",
       date: "May 2023",
       logo: redhat,
-      insights: [
-        "Administración básica de sistemas Linux Red Hat.",
-        "Gestión de usuarios, archivos, procesos y permisos.",
-      ],
+      insights:
+        lang === "es"
+          ? [
+              "Administración básica de sistemas Linux Red Hat.",
+              "Gestión de usuarios, archivos, procesos y permisos.",
+            ]
+          : [
+              "Basic administration of Red Hat Linux systems.",
+              "Management of users, files, processes, and permissions.",
+            ],
       insignia: redhatpdf,
       technologies: ["Linux", "Red Hat", "SysAdmin"],
       logos: ["icon-linux", "icon-red-hat", "icon-settings-3"],
     },
-    // Computación Cuántica
     {
       area: "Computación Cuántica",
-      role: "Introducción a Computación Cuántica",
+      role:
+        lang === "es"
+          ? "Introducción a Computación Cuántica"
+          : "Introduction to Quantum Computing",
       company: "Universidad de Los Andes",
       date: "Jul 2025",
       logo: uniandes,
-      insights: [
-        "Qubits y circuitos cuánticos.",
-        "Entrenamiento y protocolos cuánticos.",
-        "Algoritmo Grover y práctica con Qiskit.",
-      ],
+      insights:
+        lang === "es"
+          ? [
+              "Qubits y circuitos cuánticos.",
+              "Entrenamiento y protocolos cuánticos.",
+              "Algoritmo Grover y práctica con Qiskit.",
+            ]
+          : [
+              "Qubits and quantum circuits.",
+              "Quantum training and protocols.",
+              "Grover’s algorithm and Qiskit practice.",
+            ],
       insignia: "",
-      technologies: ["Qubits", "Circuitos Cuánticos", "Qiskit"],
+      technologies: ["Qubits", "Quantum Circuits", "Qiskit"],
       logos: [
         "icon-75-percents",
         "icon-external-circuit-future-shopping-becris-lineal-color-becris",
@@ -180,17 +283,14 @@ function CursosCertificados({ darkMode }) {
     },
   ];
 
-  // 🔹 Orden personalizado de áreas
   const ordenAreas = [
     "Desarrollo",
     "Computación Cuántica",
     "Cloud",
     "Metodologías Ágiles",
     "Sistemas Operativos",
-    
   ];
 
-  // 🔹 Agrupar cursos y ordenar según el orden personalizado
   const areasOrdenadas = Object.entries(
     cursos.reduce((acc, curso) => {
       acc[curso.area] = acc[curso.area] ? [...acc[curso.area], curso] : [curso];
@@ -206,7 +306,7 @@ function CursosCertificados({ darkMode }) {
     >
       <div className="relative mb-6">
         <h2 className="text-3xl md:text-4xl font-bold tracking-wide text-center">
-          📜 Cursos & Certificados
+          {t.titulo}
         </h2>
         <button
           onClick={() => setIsOpen((s) => !s)}
@@ -246,7 +346,7 @@ function CursosCertificados({ darkMode }) {
                   darkMode ? "text-cyan-300" : "text-[#0369A1]"
                 }`}
               >
-                {area}
+                {t.areas[area]}
               </h3>
 
               <div className="flex flex-col gap-5">
@@ -305,7 +405,7 @@ function CursosCertificados({ darkMode }) {
                               : "bg-cyan-100 border-cyan-300 text-cyan-700 hover:bg-cyan-200"
                           }`}
                         >
-                          🏅 Ver insignia
+                          {t.verInsignia}
                         </a>
                       )}
                     </div>

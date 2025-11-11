@@ -2,20 +2,49 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import javeriana from "../assets/pictures/javeriana.png";
 
-function Educacion({ darkMode }) {
+function Educacion({ darkMode, lang}) {
   const [isOpen, setIsOpen] = useState(true);
 
-  const experiences = [
-    {
+  const translations = {
+    es: {
+      title: "👨‍🎓 Educación",
+      toggleClose: "Cerrar sección",
+      toggleOpen: "Abrir sección",
+      role: "Ingeniería de Sistemas",
       company: "Pontificia Universidad Javeriana",
-      role: "Ingeniería de sistemas",
       date: "Bogotá, Colombia · Ene 2021 - Mar 2025",
-      logo: javeriana,
       recognitions: [
         "Beca por Excelencia Académica.",
         "Mención de Proyecto de Grado.",
         "Puesto sobresaliente en la carrera.",
       ],
+      badge: "🏅 Ver insignia",
+    },
+    en: {
+      title: "👨‍🎓 Education",
+      toggleClose: "Close section",
+      toggleOpen: "Open section",
+      role: "Systems Engineering",
+      company: "Pontifical Xavierian University",
+      date: "Bogotá, Colombia · Jan 2021 - Mar 2025",
+      recognitions: [
+        "Academic Excellence Scholarship.",
+        "Honorable Mention for Graduation Project.",
+        "Outstanding ranking in the program.",
+      ],
+      badge: "🏅 View badge",
+    },
+  };
+
+  const t = translations[lang];
+
+  const experiences = [
+    {
+      company: t.company,
+      role: t.role,
+      date: t.date,
+      logo: javeriana,
+      recognitions: t.recognitions,
       insignia: "https://wallet.xertify.co/certificates/FB4B8666A002",
     },
   ];
@@ -29,7 +58,7 @@ function Educacion({ darkMode }) {
             darkMode ? "text-white" : "text-gray-800"
           }`}
         >
-          👨‍🎓 Educación
+          {t.title}
         </h2>
 
         {/* Botón + / - */}
@@ -41,7 +70,7 @@ function Educacion({ darkMode }) {
               ? "text-white hover:bg-white/10"
               : "text-gray-700 hover:bg-gray-200/50"
           }`}
-          title={isOpen ? "Cerrar sección" : "Abrir sección"}
+          title={isOpen ? t.toggleClose : t.toggleOpen}
         >
           {isOpen ? "−" : "+"}
         </button>
@@ -129,7 +158,7 @@ function Educacion({ darkMode }) {
                           : "bg-cyan-100 border-cyan-300 text-cyan-700 hover:bg-cyan-200"
                       }`}
                     >
-                      🏅 Ver insignia
+                      {t.badge}
                     </a>
                   </div>
 
