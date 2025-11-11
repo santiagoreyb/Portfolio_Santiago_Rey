@@ -9,7 +9,6 @@ import eco1 from "./EcoGuardians/eco1.png";
 import eco2 from "./EcoGuardians/eco2.png";
 import eco3 from "./EcoGuardians/eco3.png";
 
-
 // WhereIsIt
 import where1 from "./WhereIsIt/whereisit1.png";
 import where2 from "./WhereIsIt/whereisit2.png";
