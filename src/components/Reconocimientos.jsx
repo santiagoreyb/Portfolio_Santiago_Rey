@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-
+import excelencia from "../assets/certificados/excelencia.pdf";
+import hackathon from "../assets/certificados/hackathon.pdf";
+import olimpiadas from "../assets/certificados/olimpiadas.pdf";
+import excelencia11 from "../assets/certificados/excelencia11.pdf";
 function Reconocimientos({ darkMode }) {
   const [isOpen, setIsOpen] = useState(true);
 
@@ -20,7 +23,7 @@ function Reconocimientos({ darkMode }) {
       fecha: "2021 - 2024",
       descripcion:
         "Otorgado la 'Constancia de Excelencia Académica' durante toda mi carrera de pregrado, un reconocimiento concedido semestralmente a los estudiantes con un promedio ponderado acumulado superior al límite establecido por el Vicerrector Académico, a propuesta del Consejo de la Facultad.",
-      insignia: "",
+      insignia: excelencia,
     },
     {
       titulo: "🥈 Segundo puesto Hackathon Ciber Pro Challenge",
@@ -28,9 +31,9 @@ function Reconocimientos({ darkMode }) {
       fecha: "May 2021",
       descripcion:
         "Reconocimiento otorgado por la Facultad de Ingeniería por mi participación en la Hackathon Ciber Pro Challenge 2021, formando parte del equipo Fsociety, con el cual obtuvimos el segundo puesto. Este evento se llevó a cabo durante 36 horas, del 23 al 25 de abril de 2021, destacando mi compromiso, entrega y dedicación.",
-      insignia: "",
+      insignia: hackathon,
     },
-        {
+    {
       titulo: "🎖️ Beneficiario de la Beca Ingresa a la Javeriana",
       entidad: "Pontificia Universidad Javeriana",
       fecha: "2021",
@@ -45,9 +48,17 @@ function Reconocimientos({ darkMode }) {
       fecha: "Mar 2020",
       descripcion:
         "Primer puesto en la prueba clasificatoria nacional de las Olimpiadas Colombianas de Matemáticas 2020, demostrando habilidades analíticas y pensamiento lógico en nivel superior.",
-      insignia: "",
+      insignia: olimpiadas,
     },
-
+    {
+      titulo:
+        "🎓 Reconocimiento a la Excelencia Académica en Grado 11",
+      entidad: "Colegio Colsubsidio",
+      fecha: "Dic 2020",
+      descripcion:
+        "Otorgado por la vivencia del perfil del estudiante y mis altos resultados académicos durante la educación media, reflejando liderazgo, compromiso y excelencia integral.",
+      insignia: excelencia11,
+    },
   ];
 
   return (

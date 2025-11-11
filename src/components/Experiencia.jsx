@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import colpensiones from "../assets/pictures/colpensiones.png";
+import placeholder from "../assets/pictures/colpensiones.png"; // 🔹 Logo genérico
 
 function Experiencia({ darkMode }) {
   const [isOpen, setIsOpen] = useState(true);
@@ -8,13 +9,15 @@ function Experiencia({ darkMode }) {
   const experiences = [
     {
       company: "Colpensiones",
-      role: "Desarrollador Full-Stack",
-      date: "Bogotá, Colombia · Feb 2025 - Actualidad",
+      role: "Desarrollador Full Stack e Ingeniero de Automatización",
+      date: "Bogotá, Colombia · Feb 2025 – Presente",
       logo: colpensiones,
       description: [
-        "Desarrollo y mantenimiento de sistemas de gestión de procesos con .NET, C#, Angular y SQL Server.",
-        "Implementación de APIs REST y automatización de flujos para mejorar eficiencia y seguridad.",
-        "Optimización de consultas y procedimientos almacenados en SQL Server.",
+        "Optimizé la eficiencia tecnológica interna desarrollando y manteniendo aplicaciones con .NET (C#), Angular, TypeScript y SQL Server/Sybase, reduciendo los tiempos de proceso en un 30%.",
+        "Diseñé e implementé APIs REST seguras y escalables, fortaleciendo la comunicación entre sistemas y mejorando la interoperabilidad entre las plataformas digitales institucionales.",
+        "Mejoré la calidad del software integrando pruebas unitarias y de integración automatizadas, disminuyendo los errores en producción en un 25%.",
+        "Fomenté prácticas ágiles participando activamente en Scrum, logrando ciclos de entrega más cortos y una mejor alineación con los objetivos del negocio.",
+        "Apoyé el despliegue exitoso de soluciones en la nube, documentando los procesos técnicos y garantizando la estabilidad en los entornos productivos.",
       ],
       logos: [
         "icon-angularjs",
@@ -22,27 +25,52 @@ function Experiencia({ darkMode }) {
         "icon-net-framework",
         "icon-c-sharp-logo",
         "icon-microsoft-sql-server",
+        "icon-azure-1",
       ],
-      technologies: ["Angular", "Typescript", ".Net", "C#", "Sql Server", "Azure"],
+      technologies: ["Angular", "TypeScript", ".NET", "C#", "SQL Server", "Azure"],
     },
     {
-      company: "AWAQ ONGD",
-      role: "Desarrollador de Videojuegos",
-      date: "Feb 2024 - Nov 2024",
+      company: "AWAQ Organization",
+      role: "Desarrollador y Scrum Master",
+      date: "Bogotá, Colombia · Feb 2024 – Nov 2024",
       logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8KDK0j2hil__W4A_3wg4HPedq-PqBuiLB3w&s",
       description: [
-        "Desarrollo del videojuego educativo 3D “EcoGuardians” en Unity y C#, enfocado en conciencia ambiental.",
-        "Diseño de mecánicas interactivas y UX/UI.",
-        "Colaboración en sprints ágiles, control de versiones y documentación técnica.",
+        "Lideré el desarrollo del videojuego educativo 3D 'EcoGuardians' utilizando Unity (C#), lo que aumentó la interacción de los usuarios y promovió la conciencia ambiental entre jóvenes.",
+        "Optimicé el rendimiento del juego y la experiencia del usuario, mejorando los tiempos de carga y la fluidez multiplataforma.",
+        "Dirigí un equipo multidisciplinario bajo la metodología Scrum, cumpliendo el 100% de los objetivos de cada sprint y consolidando una cultura de colaboración técnica.",
       ],
       logos: [
         "icon-unity",
-        "icon-react",
-        "icon-javascript",
         "icon-net-framework",
         "icon-c-sharp-logo",
+        "icon-blender-3d",
+        "icon-react",
+        "icon-javascript",
+        "icon-adobe-illustrator",
+        "icon-adobe-photoshop"
+
       ],
-      technologies: ["Unity", "React", "JavaScript", ".Net", "C#"],
+      technologies: ["Unity", ".NET", "C#", "Blender", "React", "JavaScript", "Adobe Illustrator", "Adobe Photoshop"],
+    },
+    {
+      company: "Freelance",
+      role: "Desarrollador Full Stack Independiente",
+      date: "Bogotá, Colombia · Ene 2023 – Dic 2023",
+      logo: placeholder,
+      description: [
+        "Desarrollé soluciones personalizadas para clientes en los sectores educativo y tecnológico, utilizando .NET, Java, Python, C++ y JavaScript, garantizando aplicaciones funcionales, seguras y escalables.",
+        "Implementé arquitecturas modulares y APIs REST, mejorando la integración entre sistemas y la eficiencia en el mantenimiento de proyectos.",
+        "Optimizé interfaces y flujos de usuario aplicando principios de UX/UI y diseño responsivo, incrementando la satisfacción de los usuarios finales.",
+        "Gestioné proyectos bajo metodologías ágiles, asegurando entregas a tiempo y comunicación efectiva con los clientes.",
+      ],
+      logos: [
+        "icon-net-framework",
+        "icon-java-coffee-cup-logo",
+        "icon-python",
+        "icon-c-plus-plus-logo",
+        "icon-javascript",
+      ],
+      technologies: [".NET", "Java", "Python", "C++", "JavaScript"],
     },
   ];
 
@@ -58,7 +86,7 @@ function Experiencia({ darkMode }) {
           💼 Experiencia
         </h2>
 
-        {/* Toggle button */}
+        {/* Botón de toggle */}
         <button
           onClick={() => setIsOpen((s) => !s)}
           aria-expanded={isOpen}

@@ -115,6 +115,7 @@ function Habilidades({ darkMode }) {
           nombre: "Trello",
           logo: "icon-external-trello-a-web-based-list-making-application-for-multi-platform-logo-color-tal-revivo",
         },
+        { nombre: "Vercel", logo: "icon-vercel" },
       ],
     },
   ];
