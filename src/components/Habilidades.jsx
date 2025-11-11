@@ -63,6 +63,7 @@ function Habilidades({ darkMode, lang}) {
         { nombre: "C#", logo: "icon-c-sharp-logo" },
         { nombre: ".NET", logo: "icon-net-framework" },
         { nombre: "Java", logo: "icon-java-coffee-cup-logo" },
+        { nombre: "Spring Boot (Básico)", logo: "icon-spring-logo" },
         { nombre: "Python", logo: "icon-python" },
         { nombre: "C++", logo: "icon-c-plus-plus-logo" },
         { nombre: "C", logo: "icon-c-programming" },
