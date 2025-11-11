@@ -42,7 +42,7 @@ function Habilidades({ darkMode }) {
         { nombre: "Keras", logo: "icon-keras" },
         { nombre: "Pandas", logo: "icon-pandas" },
         { nombre: "NumPy", logo: "icon-numpy" },
-        { nombre: "IA Generativa", logo: "icon-ai-generated-code-2" }, // nuevo ID
+        { nombre: "IA Generativa", logo: "icon-ai-generated-code" }, // nuevo ID
       ],
     },
     {
@@ -71,7 +71,7 @@ function Habilidades({ darkMode }) {
           logo: "icon-external-mongodb-a-cross-platform-document-oriented-database-program-logo-color-tal-revivo",
         },
         { nombre: "SQL Server", logo: "icon-microsoft-sql-server" },
-        { nombre: "Oracle", logo: "icon-oracle-logo" }, // Oracle en DBs
+        { nombre: "Oracle", logo: "icon-oracle-pl-sql" }, // Oracle en DBs
         { nombre: "Firebase DB", logo: "icon-firebase" },
       ],
     },

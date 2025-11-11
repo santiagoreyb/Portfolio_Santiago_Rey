@@ -23,7 +23,7 @@ function Experiencia({ darkMode }) {
         "icon-c-sharp-logo",
         "icon-microsoft-sql-server",
       ],
-      technologies: ["Angular", "Typescript", ".Net", "C#", "Sql Server"],
+      technologies: ["Angular", "Typescript", ".Net", "C#", "Sql Server", "Azure"],
     },
     {
       company: "AWAQ ONGD",

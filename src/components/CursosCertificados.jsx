@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+
 import google from "../assets/pictures/google.png";
 import ibm from "../assets/pictures/ibm.png";
 import redhat from "../assets/pictures/redhat.png";
@@ -14,10 +15,8 @@ import senapdf from "../assets/certificados/sena.pdf";
 function CursosCertificados({ darkMode }) {
   const [isOpen, setIsOpen] = useState(true);
 
-  const areas = ["Desarrollo", "Cloud", "Metodologías Ágiles", "Sistemas Operativos"];
-
   const cursos = [
-    // 🧩 DESARROLLO
+    // Desarrollo
     {
       area: "Desarrollo",
       role: "CET - TIC Desarrollo Web Front-End con HTML, CSS y JavaScript (React)",
@@ -30,7 +29,7 @@ function CursosCertificados({ darkMode }) {
       ],
       insignia: "https://wallet.xertify.co/certificates/2A0EAF66A002",
       technologies: ["HTML5", "CSS", "JavaScript", "React"],
-      logos: ["icon-html", "icon-css", "icon-javascript", "icon-react"],
+      logos: ["icon-html-5", "icon-css3", "icon-javascript", "icon-react"],
     },
     {
       area: "Desarrollo",
@@ -44,7 +43,12 @@ function CursosCertificados({ darkMode }) {
       ],
       insignia: "https://wallet.xertify.co/certificates/EFA11D1AA001?viewMode=regular",
       technologies: ["C++", "Arduino", "UX Design", "Problem Solving"],
-      logos: ["icon-cpp", "icon-arduino", "icon-ux", "icon-brain"],
+      logos: [
+        "icon-c-plus-plus-logo",
+        "icon-arduino",
+        "icon-external-ui-design-ux-and-ui-icons-flaticons-lineal-color-flat-icons-2",
+        "icon-brain-3",
+      ],
     },
     {
       area: "Desarrollo",
@@ -58,7 +62,11 @@ function CursosCertificados({ darkMode }) {
       ],
       insignia: senapdf,
       technologies: ["App Inventor", "Android", "UI Design"],
-      logos: ["icon-appinventor", "icon-android", "icon-ui"],
+      logos: [
+        "icon-android-os",
+        "icon-android-os",
+        "icon-external-ui-design-ux-and-ui-icons-flaticons-lineal-color-flat-icons-2",
+      ],
     },
     {
       area: "Desarrollo",
@@ -72,10 +80,13 @@ function CursosCertificados({ darkMode }) {
       ],
       insignia: pilotopdf,
       technologies: ["Arduino", "Raspberry Pi", "IoT"],
-      logos: ["icon-arduino", "icon-raspberry", "icon-iot"],
+      logos: [
+        "icon-arduino",
+        "icon-external-raspberry-pi-is-a-small-and-affordable-computer-that-you-can-use-to-learn-programming-logo-color-tal-revivo",
+        "icon-external-iot-fintech-becris-lineal-color-becris",
+      ],
     },
-
-    // ☁️ CLOUD
+    // Cloud
     {
       area: "Cloud",
       role: "Google Cloud Computing Foundations Certificate",
@@ -84,24 +95,35 @@ function CursosCertificados({ darkMode }) {
       logo: google,
       insights: [
         "Fundamentos de Cloud Computing y servicios de GCP.",
-        "Implementación de soluciones en Cloud Run, Firestore y Dataflow.",
+        "Implementación de soluciones en Cloud Run, Cloud Engine, Firestore, Dataflow, etc.",
       ],
-      insignia: "https://www.credly.com/badges/56df403f-bc3f-4289-a7d9-88213affe407/linked_in_profile",
-      technologies: [
-        "Google Cloud Run",
-        "Cloud Dataflow",
-        "Firestore",
-        "Storage",
-      ],
+      insignia:
+        "https://www.credly.com/badges/56df403f-bc3f-4289-a7d9-88213affe407/linked_in_profile",
+      technologies: ["GCP", "Cloud Run", "Compute Engine", "Firestore", "Storage"],
       logos: [
-        "icon-cloudrun",
-        "icon-dataflow",
-        "icon-firestore",
-        "icon-cloudstorage",
+        "icon-google-cloud",
+        "icon-google-cloud-run-svgrepo-com",
+        "icon-google-compute-engine",
+        "icon-cloud-firestore",
+        "icon-cloud-storage",
       ],
     },
-
-    // 🧠 SISTEMAS / SAP
+    {
+      area: "Cloud",
+      role: "Cloud Computing con Azure y AWS",
+      company: "Universidad de Los Andes",
+      date: "Jul 2025",
+      logo: uniandes,
+      insights: [
+        "Arquitectura y servicios de Azure y AWS.",
+        "Administración y gobernanza en Azure y AWS.",
+        "DevOps y automatización.",
+      ],
+      insignia: "",
+      technologies: ["Azure", "AWS"],
+      logos: ["icon-azure-1", "icon-amazon-web-services"],
+    },
+    // Metodologías
     {
       area: "Metodologías Ágiles",
       role: "Agile Explorer",
@@ -115,8 +137,13 @@ function CursosCertificados({ darkMode }) {
       insignia:
         "https://www.credly.com/badges/23152632-a3a0-4bf7-9002-f4dac255380c/linked_in_profile",
       technologies: ["Scrum", "Agile", "Project Management"],
-      logos: ["icon-scrum", "icon-agile", "icon-project"],
+      logos: [
+        "icon-external-scrum-agile-flaticons-lineal-color-flat-icons-6",
+        "icon-external-scrum-agile-flaticons-lineal-color-flat-icons-6",
+        "icon-problem-solving",
+      ],
     },
+    // Sistemas
     {
       area: "Sistemas Operativos",
       role: "Red Hat System Administration I (RH124)",
@@ -129,9 +156,47 @@ function CursosCertificados({ darkMode }) {
       ],
       insignia: redhatpdf,
       technologies: ["Linux", "Red Hat", "SysAdmin"],
-      logos: ["icon-linux", "icon-redhat", "icon-server"],
+      logos: ["icon-linux", "icon-red-hat", "icon-settings-3"],
+    },
+    // Computación Cuántica
+    {
+      area: "Computación Cuántica",
+      role: "Introducción a Computación Cuántica",
+      company: "Universidad de Los Andes",
+      date: "Jul 2025",
+      logo: uniandes,
+      insights: [
+        "Qubits y circuitos cuánticos.",
+        "Entrenamiento y protocolos cuánticos.",
+        "Algoritmo Grover y práctica con Qiskit.",
+      ],
+      insignia: "",
+      technologies: ["Qubits", "Circuitos Cuánticos", "Qiskit"],
+      logos: [
+        "icon-75-percents",
+        "icon-external-circuit-future-shopping-becris-lineal-color-becris",
+        "icon-python",
+      ],
     },
   ];
+
+  // 🔹 Orden personalizado de áreas
+  const ordenAreas = [
+    "Desarrollo",
+    "Computación Cuántica",
+    "Cloud",
+    "Metodologías Ágiles",
+    "Sistemas Operativos",
+    
+  ];
+
+  // 🔹 Agrupar cursos y ordenar según el orden personalizado
+  const areasOrdenadas = Object.entries(
+    cursos.reduce((acc, curso) => {
+      acc[curso.area] = acc[curso.area] ? [...acc[curso.area], curso] : [curso];
+      return acc;
+    }, {})
+  ).sort((a, b) => ordenAreas.indexOf(a[0]) - ordenAreas.indexOf(b[0]));
 
   return (
     <div
@@ -139,163 +204,146 @@ function CursosCertificados({ darkMode }) {
         isOpen ? "min-h-screen" : "h-auto"
       }`}
     >
-      {/* Encabezado */}
       <div className="relative mb-6">
         <h2 className="text-3xl md:text-4xl font-bold tracking-wide text-center">
           📜 Cursos & Certificados
         </h2>
-
-        {/* Botón + / − */}
         <button
           onClick={() => setIsOpen((s) => !s)}
           aria-expanded={isOpen}
           className="absolute right-2 top-0 text-3xl md:text-4xl font-bold hover:bg-white/5 transition"
-          title={isOpen ? "Cerrar sección" : "Abrir sección"}
         >
           {isOpen ? "−" : "+"}
         </button>
       </div>
 
-      {/* Línea decorativa */}
       <div
         className={`mx-auto h-[2px] w-full rounded-full ${
           darkMode ? "bg-cyan-300/50" : "bg-[#93B4D4]"
         }`}
       ></div>
 
-      {/* Contenido */}
       <div
         className={`overflow-hidden transition-all duration-700 ease-in-out ${
           isOpen ? "max-h-[5000px] mt-2 opacity-100" : "max-h-0 mt-0 opacity-0"
         }`}
       >
-        {/* Grid estilo collage */}
         <div className="columns-1 md:columns-2 gap-6 space-y-6 mt-10">
-          {areas.map((area, index) => {
-            const cursosFiltrados = cursos.filter((curso) => curso.area === area);
-
-            return (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.15 }}
-                className={`break-inside-avoid p-6 rounded-2xl shadow-lg backdrop-blur-md border transition-all duration-300 ${
-                  darkMode
-                    ? "bg-[#0f172a] border-cyan-500/30 hover:border-cyan-400/60"
-                    : "bg-[#D9DEE8] border-[#93B4D4] hover:border-[#7CA5CE]"
+          {areasOrdenadas.map(([area, cursosFiltrados], index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.15 }}
+              className={`break-inside-avoid p-6 rounded-2xl shadow-lg backdrop-blur-md border transition-all duration-300 ${
+                darkMode
+                  ? "bg-[#0f172a] border-cyan-500/30 hover:border-cyan-400/60"
+                  : "bg-[#D9DEE8] border-[#93B4D4] hover:border-[#7CA5CE]"
+              }`}
+            >
+              <h3
+                className={`text-2xl font-semibold mb-6 text-center ${
+                  darkMode ? "text-cyan-300" : "text-[#0369A1]"
                 }`}
               >
-                {/* Título del área */}
-                <h3
-                  className={`text-2xl font-semibold mb-6 text-center ${
-                    darkMode ? "text-cyan-300" : "text-[#0369A1]"
-                  }`}
-                >
-                  {area}
-                </h3>
+                {area}
+              </h3>
 
-                {/* Mini-tarjetas dentro */}
-                <div className="flex flex-col gap-5">
-                  {cursosFiltrados.map((exp, idx) => (
-                    <motion.div
-                      key={idx}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.4, delay: idx * 0.1 }}
-                      className={`p-5 rounded-xl border transition-all duration-300 ${
-                        darkMode
-                          ? "bg-[#1a2541] border-cyan-400/30 hover:border-cyan-400/60"
-                          : "bg-[#CBD4E1] border-[#93B4D4] hover:border-[#7CA5CE]"
+              <div className="flex flex-col gap-5">
+                {cursosFiltrados.map((exp, idx) => (
+                  <motion.div
+                    key={idx}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.4, delay: idx * 0.1 }}
+                    className={`p-5 rounded-xl border transition-all duration-300 ${
+                      darkMode
+                        ? "bg-[#1a2541] border-cyan-400/30 hover:border-cyan-400/60"
+                        : "bg-[#CBD4E1] border-[#93B4D4] hover:border-[#7CA5CE]"
+                    }`}
+                  >
+                    <div className="flex items-start justify-between gap-3 mb-3">
+                      <div className="flex items-center gap-3">
+                        <img
+                          src={exp.logo}
+                          alt={`${exp.company} logo`}
+                          className="w-12 h-12 object-contain rounded-md"
+                        />
+                        <div>
+                          <h4
+                            className={`text-lg font-semibold ${
+                              darkMode ? "text-cyan-300" : "text-[#1E293B]"
+                            }`}
+                          >
+                            {exp.role}
+                          </h4>
+                          <p
+                            className={`text-sm ${
+                              darkMode ? "text-[#C4D7E9]" : "text-[#334155]"
+                            }`}
+                          >
+                            {exp.company}
+                          </p>
+                          <p
+                            className={`text-xs ${
+                              darkMode ? "text-[#C4D7E9]" : "text-[#334155]"
+                            }`}
+                          >
+                            {exp.date}
+                          </p>
+                        </div>
+                      </div>
+
+                      {exp.insignia && (
+                        <a
+                          href={exp.insignia}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={`px-3 py-1.5 rounded-lg shadow-lg backdrop-blur-md border text-xs font-medium whitespace-nowrap transition-all duration-300 ${
+                            darkMode
+                              ? "bg-cyan-400/10 border-cyan-400/40 text-cyan-300 hover:bg-cyan-400/20"
+                              : "bg-cyan-100 border-cyan-300 text-cyan-700 hover:bg-cyan-200"
+                          }`}
+                        >
+                          🏅 Ver insignia
+                        </a>
+                      )}
+                    </div>
+
+                    <ul
+                      className={`list-disc list-inside text-sm space-y-1 mb-3 ${
+                        darkMode ? "text-[#C4D7E9]" : "text-[#334155]"
                       }`}
                     >
-                      {/* Encabezado */}
-                      <div className="flex items-start justify-between gap-3 mb-3">
-                        <div className="flex items-center gap-3">
-                          <img
-                            src={exp.logo}
-                            alt={`${exp.company} logo`}
-                            className="w-12 h-12 object-contain rounded-md"
-                          />
-                          <div>
-                            <h4
-                              className={`text-lg font-semibold ${
-                                darkMode ? "text-cyan-300" : "text-[#1E293B]"
-                              }`}
-                            >
-                              {exp.role}
-                            </h4>
-                            <p
-                              className={`text-sm ${
-                                darkMode ? "text-[#C4D7E9]" : "text-[#334155]"
-                              }`}
-                            >
-                              {exp.company}
-                            </p>
-                            <p
-                              className={`text-xs ${
-                                darkMode ? "text-[#C4D7E9]" : "text-[#334155]"
-                              }`}
-                            >
-                              {exp.date}
-                            </p>
-                          </div>
-                        </div>
+                      {exp.insights.map((item, i) => (
+                        <li key={i}>{item}</li>
+                      ))}
+                    </ul>
 
-                        {/* Botón insignia */}
-                        {exp.insignia && (
-                          <a
-                            href={exp.insignia}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className={`px-3 py-1.5 rounded-lg shadow-lg backdrop-blur-md border text-xs font-medium whitespace-nowrap transition-all duration-300 ${
+                    {exp.technologies && (
+                      <div className="flex flex-wrap gap-2 mt-2">
+                        {exp.technologies.map((tech, i) => (
+                          <span
+                            key={i}
+                            className={`flex items-center gap-2 px-3 py-1 rounded-full text-sm border transition-all duration-300 ${
                               darkMode
                                 ? "bg-cyan-400/10 border-cyan-400/40 text-cyan-300 hover:bg-cyan-400/20"
                                 : "bg-cyan-100 border-cyan-300 text-cyan-700 hover:bg-cyan-200"
                             }`}
                           >
-                            🏅 Ver insignia
-                          </a>
-                        )}
-                      </div>
-
-                      {/* Descripción */}
-                      <ul
-                        className={`list-disc list-inside text-sm space-y-1 mb-3 ${
-                          darkMode ? "text-[#C4D7E9]" : "text-[#334155]"
-                        }`}
-                      >
-                        {exp.insights.map((item, i) => (
-                          <li key={i}>{item}</li>
+                            <svg className="w-5 h-5" aria-hidden="true">
+                              <use href={`/portfolio.min.svg#${exp.logos[i]}`} />
+                            </svg>
+                            {tech}
+                          </span>
                         ))}
-                      </ul>
-
-                      {/* Tecnologías */}
-                      {exp.technologies && (
-                        <div className="flex flex-wrap gap-2 mt-2">
-                          {exp.technologies.map((tech, i) => (
-                            <span
-                              key={i}
-                              className={`flex items-center gap-2 px-3 py-1 rounded-full text-sm border transition-all duration-300 ${
-                                darkMode
-                                  ? "bg-cyan-400/10 border-cyan-400/40 text-cyan-300 hover:bg-cyan-400/20"
-                                  : "bg-cyan-100 border-cyan-300 text-cyan-700 hover:bg-cyan-200"
-                              }`}
-                            >
-                              <svg className="w-5 h-5" aria-hidden="true">
-                                <use href={`/portfolio.min.svg#${exp.logos[i]}`} />
-                              </svg>
-                              {tech}
-                            </span>
-                          ))}
-                        </div>
-                      )}
-                    </motion.div>
-                  ))}
-                </div>
-              </motion.div>
-            );
-          })}
+                      </div>
+                    )}
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </div>

@@ -137,7 +137,7 @@ function Header({ darkMode, setDarkMode, lang, setLang }) {
                   ? "bg-gray-700 text-gray-100 hover:bg-gray-600"
                   : "bg-gray-200 text-gray-800 hover:bg-gray-300"}`}
             >
-              {lang === "es" ? "🌍 Idioma: Español" : "🌍 Language: English"}
+              {lang === "es" ? "🌍 Idioma: Español - Nativo" : "🌍 Language: English - B2"}
             </button>
 
             {/* 🌙 Dark mode */}
