@@ -4,7 +4,7 @@ import { proyectos as proyectosData } from "../data/proyectosData"; // JSON mult
 import {
   Portafolio,
 
-} from "../assets/Proyectos/images.js";
+} from "../assets/Proyectos/imagesP.js";
 
 function Proyectos({ darkMode, lang}) {
   const [isOpen, setIsOpen] = useState(true);

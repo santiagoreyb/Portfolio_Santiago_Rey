@@ -13,7 +13,7 @@ import {
   Solar,
   FastE,
   FastU
-} from "../assets/Proyectos/images.js";
+} from "../assets/Proyectos/imagesP.js";
 
 export const proyectos = [
   {
