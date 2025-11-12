@@ -5,7 +5,7 @@ import hackathon from "../assets/certificados/hackathon.pdf";
 import olimpiadas from "../assets/certificados/olimpiadas.pdf";
 import excelencia11 from "../assets/certificados/excelencia11.pdf";
 
-function Reconocimientos({ darkMode, lang = "es" }) {
+function Reconocimientos({ darkMode, lang}) {
   const [isOpen, setIsOpen] = useState(true);
 
   const reconocimientos = [

@@ -10,15 +10,20 @@ import Contacto from "./components/Contacto";
 import Footer from "./components/Footer";
 import Reconocimientos from "./components/Reconocimientos";
 
-function App() {
-  const [darkMode, setDarkMode] = useState(
-    localStorage.getItem("theme") === "dark"
-  );
+function App({ defaultLang = "es" }) {
+  // 🌙 Modo oscuro por defecto = true, o lo que haya en localStorage
+  const [darkMode, setDarkMode] = useState(() => {
+    const saved = localStorage.getItem("theme");
+    return saved ? saved === "dark" : true;
+  });
 
-  // 🗣️ Estado para el idioma
-  const [lang, setLang] = useState(localStorage.getItem("lang") || "es");
+  // 🗣️ Idioma: inicializamos con defaultLang si no hay nada en localStorage
+  const [lang, setLang] = useState(() => {
+    const saved = localStorage.getItem("lang");
+    return saved || defaultLang;
+  });
 
-  // 🌙 Modo oscuro: guardar en localStorage
+  // 🌙 Modo oscuro: aplicar clase al root y guardar en localStorage
   useEffect(() => {
     const root = document.documentElement;
     const body = document.body;
