@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import logo from "../assets/pictures/logo.png";
 import { FaCog } from "react-icons/fa";
 
 function Header({ darkMode, setDarkMode, lang, setLang }) {
+  const navigate = useNavigate();
   const [active, setActive] = useState("home");
   const [showHeader, setShowHeader] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -20,6 +22,7 @@ function Header({ darkMode, setDarkMode, lang, setLang }) {
     { id: "contacto", label: lang === "es" ? "Contacto" : "Contact", href: "#contacto" },
   ];
 
+  // Ocultar header al hacer scroll
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > lastScrollY) setShowHeader(false);
@@ -30,6 +33,7 @@ function Header({ darkMode, setDarkMode, lang, setLang }) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
 
+  // Guardar idioma en localStorage (opcional)
   useEffect(() => {
     localStorage.setItem("lang", lang);
   }, [lang]);
@@ -44,7 +48,7 @@ function Header({ darkMode, setDarkMode, lang, setLang }) {
         ${showHeader ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"}`}
     >
       <div className="flex items-center justify-between px-6 py-3">
-        {/* 🧿 Logo */}
+        {/* Logo */}
         <a href="#" className="flex items-center space-x-3">
           <img src={logo} className="h-8 w-8 object-contain" alt="Logo" />
           <span className={`text-lg font-semibold ${darkMode ? "text-white" : "text-gray-800"}`}>
@@ -52,8 +56,8 @@ function Header({ darkMode, setDarkMode, lang, setLang }) {
           </span>
         </a>
 
-        {/* 🧭 Menú Desktop */}
-        <ul className="hidden md:flex items-center justify-center gap-6 font-medium text-sm mx-auto">
+        {/* Menú Desktop */}
+        <ul className="hidden lg:flex items-center justify-center gap-6 font-medium text-sm mx-auto">
           {links.map((link) => (
             <li key={link.id}>
               <a
@@ -75,17 +79,17 @@ function Header({ darkMode, setDarkMode, lang, setLang }) {
           ))}
         </ul>
 
-        {/* ⚙️ Botón de configuración (a la derecha) */}
+        {/* Botones */}
         <div className="flex items-center gap-4">
-          {/* ☰ Móvil */}
+          {/* Menú móvil */}
           <button
-            className="md:hidden text-2xl focus:outline-none"
+            className="block lg:hidden text-2xl focus:outline-none"
             onClick={() => setMenuOpen(!menuOpen)}
           >
             {menuOpen ? "✕" : "☰"}
           </button>
 
-          {/* ⚙️ Desktop */}
+          {/* Configuración */}
           <button
             onClick={() => setSettingsOpen(!settingsOpen)}
             className={`flex text-xl p-2 rounded-full transition ${
@@ -99,7 +103,7 @@ function Header({ darkMode, setDarkMode, lang, setLang }) {
         </div>
       </div>
 
-      {/* 📱 Menú móvil */}
+      {/* Menú móvil */}
       {menuOpen && (
         <div className="md:hidden flex flex-col items-center pb-4 space-y-3">
           {links.map((link) => (
@@ -122,16 +126,21 @@ function Header({ darkMode, setDarkMode, lang, setLang }) {
         </div>
       )}
 
-      {/* 🛠️ Drawer de configuración */}
+      {/* Drawer configuración */}
       {settingsOpen && (
         <div
           className={`absolute top-full right-4 mt-2 p-4 rounded-xl shadow-xl border
             ${darkMode ? "bg-gray-800 border-gray-700" : "bg-white border-gray-200"}`}
         >
           <div className="flex flex-col gap-3 text-sm">
-            {/* 🌍 Idioma */}
+            {/* Toggle idioma */}
             <button
-              onClick={() => setLang(lang === "es" ? "en" : "es")}
+              onClick={() => {
+                const newLang = lang === "es" ? "en" : "es";
+                setLang(newLang);
+                localStorage.setItem("lang", newLang);
+                navigate(`/${newLang}`);
+              }}
               className={`px-3 py-1 font-semibold rounded-md transition-all duration-300
                 ${darkMode
                   ? "bg-gray-700 text-gray-100 hover:bg-gray-600"
@@ -140,7 +149,7 @@ function Header({ darkMode, setDarkMode, lang, setLang }) {
               {lang === "es" ? "🌍 Idioma: Español - Nativo" : "🌍 Language: English - B2"}
             </button>
 
-            {/* 🌙 Dark mode */}
+            {/* Toggle dark mode */}
             <label className="relative inline-flex items-center cursor-pointer">
               <input
                 type="checkbox"

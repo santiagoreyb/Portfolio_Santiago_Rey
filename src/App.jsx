@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import Header from "./components/Header";
 import Perfil from "./components/Perfil";
 import Experiencia from "./components/Experiencia";
@@ -11,29 +12,54 @@ import Footer from "./components/Footer";
 import Reconocimientos from "./components/Reconocimientos";
 
 function App({ defaultLang = "es" }) {
-  // 🌙 Modo oscuro siempre por defecto
-  const [darkMode, setDarkMode] = useState(true);
+  const location = useLocation();
 
-  // 🗣️ Idioma: inicializamos con defaultLang si no hay nada en localStorage
+  // 🌙 Modo oscuro por defecto
+  const [darkMode, setDarkMode] = useState(() => {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === null) {
+      localStorage.setItem("theme", "dark");
+      return true;
+    }
+    return savedTheme === "dark";
+  });
+
+  // 🌍 Idioma: defaultLang viene de la ruta o localStorage
   const [lang, setLang] = useState(() => {
     const savedLang = localStorage.getItem("lang");
     return savedLang || defaultLang;
   });
 
-  // 🌙 Aplicar clase de tema al root y body
+  // 🔄 Sincronizar lang con la URL al inicio o cambio de ruta
+  useEffect(() => {
+    const pathLang = location.pathname.split("/")[1]; // 'es' o 'en'
+    if (pathLang === "es" || pathLang === "en") {
+      setLang(pathLang);
+      localStorage.setItem("lang", pathLang);
+    }
+  }, [location.pathname]);
+
+  // 🌙 Aplicar clases de tema
   useEffect(() => {
     const root = document.documentElement;
     const body = document.body;
 
-    root.classList.add("dark");
-    root.classList.remove("light");
-    body.classList.add("dark");
-    body.classList.remove("light");
+    if (darkMode) {
+      root.classList.add("dark");
+      root.classList.remove("light");
+      body.classList.add("dark");
+      body.classList.remove("light");
+      localStorage.setItem("theme", "dark");
+    } else {
+      root.classList.add("light");
+      root.classList.remove("dark");
+      body.classList.add("light");
+      body.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+    }
+  }, [darkMode]);
 
-    localStorage.setItem("theme", "dark"); // opcional, actualiza localStorage
-  }, []);
-
-  // 🌍 Guardar idioma seleccionado
+  // Guardar idioma cuando cambia
   useEffect(() => {
     localStorage.setItem("lang", lang);
   }, [lang]);
