@@ -11,29 +11,35 @@ import Footer from "./components/Footer";
 import Reconocimientos from "./components/Reconocimientos";
 
 function App({ defaultLang = "es" }) {
-  // 🌙 Modo oscuro por defecto = true, o lo que haya en localStorage
+  // 🌙 Modo oscuro por defecto = true
   const [darkMode, setDarkMode] = useState(() => {
-    const saved = localStorage.getItem("theme");
-    return saved ? saved === "dark" : true;
+    const savedTheme = localStorage.getItem("theme");
+    // Si no hay theme guardado, el default será oscuro
+    return savedTheme ? savedTheme === "dark" : true;
   });
 
   // 🗣️ Idioma: inicializamos con defaultLang si no hay nada en localStorage
   const [lang, setLang] = useState(() => {
-    const saved = localStorage.getItem("lang");
-    return saved || defaultLang;
+    const savedLang = localStorage.getItem("lang");
+    return savedLang || defaultLang;
   });
 
-  // 🌙 Modo oscuro: aplicar clase al root y guardar en localStorage
+  // 🌙 Aplicar clase de tema al root y body
   useEffect(() => {
     const root = document.documentElement;
     const body = document.body;
+
     if (darkMode) {
       root.classList.add("dark");
+      root.classList.remove("light");
+      body.classList.add("dark");
       body.classList.remove("light");
       localStorage.setItem("theme", "dark");
     } else {
+      root.classList.add("light");
       root.classList.remove("dark");
       body.classList.add("light");
+      body.classList.remove("dark");
       localStorage.setItem("theme", "light");
     }
   }, [darkMode]);
@@ -44,51 +50,20 @@ function App({ defaultLang = "es" }) {
   }, [lang]);
 
   return (
-    <div className="min-h-screen">
-      {/* Encabezado */}
-      <Header
-        darkMode={darkMode}
-        setDarkMode={setDarkMode}
-        lang={lang}
-        setLang={setLang}
-      />
+    <div className="min-h-screen bg-background dark:bg-background-dark transition-colors">
+      <Header darkMode={darkMode} setDarkMode={setDarkMode} lang={lang} setLang={setLang} />
 
-      {/* Contenido principal */}
       <main className="max-w-6xl mx-auto px-4">
-        <section id="perfil">
-          <Perfil darkMode={darkMode} lang={lang} />
-        </section>
-
-        <section id="experiencia">
-          <Experiencia darkMode={darkMode} lang={lang} />
-        </section>
-
-        <section id="educacion">
-          <Educacion darkMode={darkMode} lang={lang} />
-        </section>
-
-        <section id="cursos-certificados">
-          <CursosCertificados darkMode={darkMode} lang={lang} />
-        </section>
-
-        <section id="proyectos">
-          <Proyectos darkMode={darkMode} lang={lang} />
-        </section>
-
-        <section id="reconocimientos">
-          <Reconocimientos darkMode={darkMode} lang={lang} />
-        </section>
-
-        <section id="habilidades">
-          <Habilidades darkMode={darkMode} lang={lang} />
-        </section>
-
-        <section id="contacto">
-          <Contacto darkMode={darkMode} lang={lang} />
-        </section>
+        <section id="perfil"><Perfil darkMode={darkMode} lang={lang} /></section>
+        <section id="experiencia"><Experiencia darkMode={darkMode} lang={lang} /></section>
+        <section id="educacion"><Educacion darkMode={darkMode} lang={lang} /></section>
+        <section id="cursos-certificados"><CursosCertificados darkMode={darkMode} lang={lang} /></section>
+        <section id="proyectos"><Proyectos darkMode={darkMode} lang={lang} /></section>
+        <section id="reconocimientos"><Reconocimientos darkMode={darkMode} lang={lang} /></section>
+        <section id="habilidades"><Habilidades darkMode={darkMode} lang={lang} /></section>
+        <section id="contacto"><Contacto darkMode={darkMode} lang={lang} /></section>
       </main>
 
-      {/* Pie de página */}
       <Footer darkMode={darkMode} lang={lang} />
     </div>
   );
