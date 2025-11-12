@@ -113,7 +113,6 @@ function Habilidades({ darkMode, lang}) {
         { nombre: "Dart (básico)", logo: "icon-dart" },
         { nombre: "Flutter (básico)", logo: "icon-flutter" },
         { nombre: "Android Studio", logo: "icon-android-studio" },
-        { nombre: "Unity", logo: "icon-unity" },
       ],
     },
     {
@@ -136,6 +135,7 @@ function Habilidades({ darkMode, lang}) {
         { nombre: "Figma", logo: "icon-figma" },
         { nombre: "Adobe Illustrator", logo: "icon-adobe-illustrator" },
         { nombre: "Adobe Photoshop", logo: "icon-adobe-photoshop" },
+        { nombre: "Unity", logo: "icon-unity" },
         { nombre: "IntelliJ IDEA", logo: "icon-intellij-idea" },
         { nombre: "VS Code", logo: "icon-visual-studio-code-2019" },
         { nombre: "Visual Studio", logo: "icon-visual-studio" },
