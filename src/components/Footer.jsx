@@ -46,7 +46,7 @@ function Footer({ darkMode, lang }) {
         <div className="flex items-center justify-center gap-6 text-2xl">
           {/* GitHub */}
           <a
-            href="https://github.com/tuUsuario"
+            href="https://github.com/santiagoreyb"
             target="_blank"
             rel="noopener noreferrer"
             className={`transition-transform hover:scale-110 ${
@@ -59,7 +59,7 @@ function Footer({ darkMode, lang }) {
 
           {/* LinkedIn */}
           <a
-            href="https://www.linkedin.com/in/tuPerfil/"
+            href="https://www.linkedin.com/in/santiagoreyb/"
             target="_blank"
             rel="noopener noreferrer"
             className={`transition-transform hover:scale-110 ${
