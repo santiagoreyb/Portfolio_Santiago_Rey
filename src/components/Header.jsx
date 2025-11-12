@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import logo from "../assets/pictures/logo.png";
+import logo from "/logo.png";
 import { FaCog } from "react-icons/fa";
 
 function Header({ darkMode, setDarkMode, lang, setLang }) {
