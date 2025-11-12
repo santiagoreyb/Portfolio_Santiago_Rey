@@ -11,12 +11,8 @@ import Footer from "./components/Footer";
 import Reconocimientos from "./components/Reconocimientos";
 
 function App({ defaultLang = "es" }) {
-  // 🌙 Modo oscuro por defecto = true
-  const [darkMode, setDarkMode] = useState(() => {
-    const savedTheme = localStorage.getItem("theme");
-    // Si no hay theme guardado, el default será oscuro
-    return savedTheme ? savedTheme === "dark" : true;
-  });
+  // 🌙 Modo oscuro siempre por defecto
+  const [darkMode, setDarkMode] = useState(true);
 
   // 🗣️ Idioma: inicializamos con defaultLang si no hay nada en localStorage
   const [lang, setLang] = useState(() => {
@@ -29,20 +25,13 @@ function App({ defaultLang = "es" }) {
     const root = document.documentElement;
     const body = document.body;
 
-    if (darkMode) {
-      root.classList.add("dark");
-      root.classList.remove("light");
-      body.classList.add("dark");
-      body.classList.remove("light");
-      localStorage.setItem("theme", "dark");
-    } else {
-      root.classList.add("light");
-      root.classList.remove("dark");
-      body.classList.add("light");
-      body.classList.remove("dark");
-      localStorage.setItem("theme", "light");
-    }
-  }, [darkMode]);
+    root.classList.add("dark");
+    root.classList.remove("light");
+    body.classList.add("dark");
+    body.classList.remove("light");
+
+    localStorage.setItem("theme", "dark"); // opcional, actualiza localStorage
+  }, []);
 
   // 🌍 Guardar idioma seleccionado
   useEffect(() => {
