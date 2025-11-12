@@ -400,15 +400,16 @@ function CursosCertificados({ darkMode, lang = "es" }) {
                           href={exp.insignia}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className={`px-3 py-1.5 rounded-lg shadow-lg backdrop-blur-md border text-xs font-medium whitespace-nowrap transition-all duration-300 ${
-                            darkMode
-                              ? "bg-cyan-400/10 border-cyan-400/40 text-cyan-300 hover:bg-cyan-400/20"
-                              : "bg-cyan-100 border-cyan-300 text-cyan-700 hover:bg-cyan-200"
+                      className={`sm:ml-auto px-3 sm:px-4 py-1 rounded-2xl shadow-lg backdrop-blur-md border text-xs sm:text-sm text-center ${
+                        darkMode
+                          ? "bg-cyan-400/10 border-cyan-400/40 text-cyan-300 hover:bg-cyan-400/20"
+                          : "bg-cyan-100 border-cyan-300 text-cyan-700 hover:bg-cyan-200"
                           }`}
                         >
                           {t.verInsignia}
                         </a>
                       )}
+                      
                     </div>
 
                     <ul
