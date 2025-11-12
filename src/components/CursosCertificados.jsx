@@ -362,53 +362,54 @@ function CursosCertificados({ darkMode, lang = "es" }) {
                         : "bg-[#CBD4E1] border-[#93B4D4] hover:border-[#7CA5CE]"
                     }`}
                   >
-                    <div className="flex items-start justify-between gap-3 mb-3">
-                      <div className="flex items-center gap-3">
-                        <img
-                          src={exp.logo}
-                          alt={`${exp.company} logo`}
-                          className="w-12 h-12 object-contain rounded-md"
-                        />
-                        <div>
-                          <h4
-                            className={`text-lg font-semibold ${
-                              darkMode ? "text-cyan-300" : "text-[#1E293B]"
-                            }`}
-                          >
-                            {exp.role}
-                          </h4>
-                          <p
-                            className={`text-sm ${
-                              darkMode ? "text-[#C4D7E9]" : "text-[#334155]"
-                            }`}
-                          >
-                            {exp.company}
-                          </p>
-                          <p
-                            className={`text-xs ${
-                              darkMode ? "text-[#C4D7E9]" : "text-[#334155]"
-                            }`}
-                          >
-                            {exp.date}
-                          </p>
-                        </div>
-                      </div>
-
-                      {exp.insignia && (
-                        <a
-                          href={exp.insignia}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className={`px-3 py-1.5 rounded-lg shadow-lg backdrop-blur-md border text-xs font-medium whitespace-nowrap transition-all duration-300 ${
-                            darkMode
-                              ? "bg-cyan-400/10 border-cyan-400/40 text-cyan-300 hover:bg-cyan-400/20"
-                              : "bg-cyan-100 border-cyan-300 text-cyan-700 hover:bg-cyan-200"
+                    <div className="flex flex-wrap md:flex-nowrap items-start justify-between gap-3 mb-3">
+                    <div className="flex items-center gap-3 flex-1 min-w-0">
+                      <img
+                        src={exp.logo}
+                        alt={`${exp.company} logo`}
+                        className="w-12 h-12 object-contain rounded-md"
+                      />
+                      <div className="min-w-0">
+                        <h4
+                          className={`text-lg font-semibold break-words ${
+                            darkMode ? "text-cyan-300" : "text-[#1E293B]"
                           }`}
                         >
-                          {t.verInsignia}
-                        </a>
-                      )}
+                          {exp.role}
+                        </h4>
+                        <p
+                          className={`text-sm ${
+                            darkMode ? "text-[#C4D7E9]" : "text-[#334155]"
+                          }`}
+                        >
+                          {exp.company}
+                        </p>
+                        <p
+                          className={`text-xs ${
+                            darkMode ? "text-[#C4D7E9]" : "text-[#334155]"
+                          }`}
+                        >
+                          {exp.date}
+                        </p>
+                      </div>
                     </div>
+
+                    {exp.insignia && (
+                      <a
+                        href={exp.insignia}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`px-3 py-1.5 rounded-lg shadow-lg backdrop-blur-md border text-xs font-medium whitespace-nowrap mt-2 md:mt-0 self-start transition-all duration-300 ${
+                          darkMode
+                            ? "bg-cyan-400/10 border-cyan-400/40 text-cyan-300 hover:bg-cyan-400/20"
+                            : "bg-cyan-100 border-cyan-300 text-cyan-700 hover:bg-cyan-200"
+                        }`}
+                      >
+                        {t.verInsignia}
+                      </a>
+                    )}
+                  </div>
+
 
                     <ul
                       className={`list-disc list-inside text-sm space-y-1 mb-3 ${
