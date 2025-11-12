@@ -61,7 +61,6 @@ function Educacion({ darkMode, lang }) {
           {t.title}
         </h2>
 
-        {/* Botón + / - */}
         <button
           onClick={() => setIsOpen((s) => !s)}
           aria-expanded={isOpen}
@@ -89,9 +88,10 @@ function Educacion({ darkMode, lang }) {
           isOpen ? "max-h-[1500px] mt-6 opacity-100" : "max-h-0 mt-0 opacity-0"
         }`}
       >
-        <div className="relative flex flex-col items-start pl-3 sm:pl-6">
-          {/* Línea lateral izquierda */}
-          <div className="absolute left-2 sm:left-5 top-0 bottom-10 w-[2px] sm:w-[3px] bg-gradient-to-b from-cyan-300/50 to-blue-600 rounded-full"></div>
+        <div className="relative flex flex-col items-start">
+          {/* Línea vertical centrada */}
+          <div className="absolute left-5 top-0 bottom-10 w-[3px] bg-gradient-to-b from-cyan-300/50 to-blue-600 rounded-full"></div>
+
 
           {experiences.map((exp, index) => (
             <motion.div
@@ -99,11 +99,11 @@ function Educacion({ darkMode, lang }) {
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: index * 0.15 }}
-              className="relative flex flex-col sm:flex-row items-start mb-16 sm:mb-20 w-full"
+              className="relative flex items-start mb-16 sm:mb-20 w-full"
             >
-              {/* Círculo en la línea */}
+              {/* Círculo */}
               <div
-                className={`ml-[2px] sm:ml-[4px] w-6 h-6 sm:w-8 sm:h-8 rounded-full border-4 shadow-[0_0_15px_#22d3ee] z-10 ${
+                className={`flex-shrink-0 w-6 h-6 sm:w-8 sm:h-8 rounded-full border-4 shadow-[0_0_15px_#22d3ee] z-10 translate-x-[2px] sm:translate-x-[3px] ${
                   darkMode
                     ? "bg-[#0f172a] border-cyan-400"
                     : "bg-[#c8d0e0] border-cyan-400"
@@ -111,7 +111,7 @@ function Educacion({ darkMode, lang }) {
               ></div>
 
               {/* Tarjeta principal */}
-              <div className="ml-8 sm:ml-12 flex-1 w-full">
+              <div className="ml-8 sm:ml-12 flex-1">
                 <div
                   className={`p-4 sm:p-6 rounded-2xl shadow-lg backdrop-blur-md border transition-all duration-300 ${
                     darkMode
