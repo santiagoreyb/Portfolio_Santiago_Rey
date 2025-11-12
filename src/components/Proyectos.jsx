@@ -47,10 +47,13 @@ function Proyectos({ darkMode, lang}) {
 
       {/* Contenido */}
       <div
-        className={`overflow-hidden transition-all duration-700 ease-in-out ${
-          isOpen ? "max-h-[5000px] mt-6 opacity-100" : "max-h-0 mt-0 opacity-0"
+        className={`transition-all duration-700 ease-in-out ${
+          isOpen
+            ? "max-h-none mt-6 opacity-100 overflow-visible"
+            : "max-h-0 mt-0 opacity-0 overflow-hidden"
         }`}
       >
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
           {proyectosData.map((proyecto, idx) => (
             <ProyectoCard

@@ -161,10 +161,13 @@ function Experiencia({ darkMode, lang}) {
 
       {/* Contenido */}
       <div
-        className={`overflow-hidden transition-all duration-700 ease-in-out ${
-          isOpen ? "max-h-[2000px] mt-6 opacity-100" : "max-h-0 mt-0 opacity-0"
+        className={`transition-all duration-700 ease-in-out ${
+          isOpen
+            ? "max-h-none mt-6 opacity-100 overflow-visible"
+            : "max-h-0 mt-0 opacity-0 overflow-hidden"
         }`}
       >
+
         <div className="relative flex flex-col items-start">
           {/* Línea lateral */}
           <div className="absolute left-5 top-0 bottom-10 w-[3px] bg-gradient-to-b from-cyan-300/50 to-blue-600 rounded-full"></div>

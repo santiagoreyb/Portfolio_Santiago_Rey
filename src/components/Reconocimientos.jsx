@@ -123,39 +123,40 @@ function Reconocimientos({ darkMode, lang}) {
                   : "bg-[#D9DEE8] border-[#93B4D4] hover:border-[#7CA5CE]"
               }`}
             >
-              <div className="flex justify-between items-start">
-                <div>
-                  <h3
-                    className={`text-xl font-semibold mb-2 ${
-                      darkMode ? "text-cyan-300" : "text-[#0369A1]"
-                    }`}
-                  >
-                    {rec.titulo[lang]}
-                  </h3>
-                  <p
-                    className={`text-sm ${
-                      darkMode ? "text-[#C4D7E9]" : "text-[#334155]"
-                    }`}
-                  >
-                    {rec.entidad[lang]} · {rec.fecha}
-                  </p>
-                </div>
-
-                {rec.insignia && (
-                  <a
-                    href={rec.insignia}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`px-3 py-1.5 rounded-lg shadow-lg backdrop-blur-md border text-xs font-medium whitespace-nowrap transition-all duration-300 ${
-                      darkMode
-                        ? "bg-cyan-400/10 border-cyan-400/40 text-cyan-300 hover:bg-cyan-400/20"
-                        : "bg-cyan-100 border-cyan-300 text-cyan-700 hover:bg-cyan-200"
-                    }`}
-                  >
-                    🎖️ {lang === "es" ? "Ver certificado" : "View Certificate"}
-                  </a>
-                )}
+              <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3">
+              <div>
+                <h3
+                  className={`text-xl font-semibold mb-2 ${
+                    darkMode ? "text-cyan-300" : "text-[#0369A1]"
+                  }`}
+                >
+                  {rec.titulo[lang]}
+                </h3>
+                <p
+                  className={`text-sm ${
+                    darkMode ? "text-[#C4D7E9]" : "text-[#334155]"
+                  }`}
+                >
+                  {rec.entidad[lang]} · {rec.fecha}
+                </p>
               </div>
+
+              {rec.insignia && (
+                <a
+                  href={rec.insignia}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`mt-2 sm:mt-0 self-start sm:self-auto px-3 py-1.5 rounded-lg shadow-lg backdrop-blur-md border text-xs font-medium whitespace-nowrap transition-all duration-300 ${
+                    darkMode
+                      ? "bg-cyan-400/10 border-cyan-400/40 text-cyan-300 hover:bg-cyan-400/20"
+                      : "bg-cyan-100 border-cyan-300 text-cyan-700 hover:bg-cyan-200"
+                  }`}
+                >
+                  🎖️ {lang === "es" ? "Ver certificado" : "View Certificate"}
+                </a>
+              )}
+            </div>
+
 
               <p
                 className={`mt-3 text-sm ${
