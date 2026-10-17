@@ -15,6 +15,7 @@ import microsoft from "../assets/pictures/microsoft.svg";
 import aws from "../assets/pictures/aws.svg";
 import codigofacilito from "../assets/pictures/codigofacilito.png";
 import azureaipdf from "../assets/certificados/AzureAI.pdf";
+import github from "../assets/pictures/github.svg";
 
 function CursosCertificados({ darkMode, lang = "es" }) {
   const [isOpen, setIsOpen] = useState(true);
@@ -133,6 +134,26 @@ function CursosCertificados({ darkMode, lang = "es" }) {
       insignia: "https://www.credly.com/badges/38fa8e85-e960-4858-9eee-5a8ae62685c7/linked_in_profile",
       technologies: ["GCP", "Cloud Computing"],
       logos: ["icon-google-cloud", "icon-cloud-storage"],
+    },
+    {
+      area: "Desarrollo",
+      role: "GitHub Foundations",
+      company: "GitHub",
+      date: "Jun 2026",
+      logo: github,
+      insights:
+        lang === "es"
+          ? [
+              "Certificación oficial en fundamentos de GitHub.",
+              "Repositorios, flujos de colaboración, pull requests, GitHub Actions y funciones de seguridad.",
+            ]
+          : [
+              "Official GitHub fundamentals certification.",
+              "Repositories, collaboration workflows, pull requests, GitHub Actions and security features.",
+            ],
+      insignia: "https://learn.microsoft.com/en-us/users/santiagoreyb/credentials/af7e8803220a377",
+      technologies: ["Git", "GitHub", "GitHub Actions"],
+      logos: ["icon-git", "icon-github", "icon-github"],
     },
     {
       area: "Desarrollo",
